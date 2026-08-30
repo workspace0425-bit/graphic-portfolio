@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PRANNY — Visual Designer</title>
+  <meta name="description" content="Portfolio of Pranny — Visual Designer. Brand Identity, Graphic Design, Art Direction.">
+  
+  <!-- Editorial Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css?v=lumaReady">
+</head>
+<body class="intro-active">
+
+  <!-- =========================================================
+       CINEMATIC LETTER-FALL INTRO OVERLAY (PORTFOLIO)
+       ========================================================= -->
+  <div id="letter-fall-stage" class="letter-fall-stage" aria-label="PORTFOLIO Intro">
+    <div class="letter-fall-track" id="letter-fall-track">
+      <span class="fall-letter" data-index="0" style="--rot: -2.8deg; --offset-x: -2px;">P</span>
+      <span class="fall-letter" data-index="1" style="--rot: 1.8deg; --offset-x: 1px;">O</span>
+      <span class="fall-letter" data-index="2" style="--rot: -1.5deg; --offset-x: -1px;">R</span>
+      <span class="fall-letter" data-index="3" style="--rot: 2.2deg; --offset-x: 2px;">T</span>
+      <span class="fall-letter" data-index="4" style="--rot: -2.0deg; --offset-x: 0px;">F</span>
+      <span class="fall-letter" data-index="5" style="--rot: 1.5deg; --offset-x: -2px;">O</span>
+      <span class="fall-letter" data-index="6" style="--rot: -2.2deg; --offset-x: 1px;">L</span>
+      <span class="fall-letter" data-index="7" style="--rot: 1.2deg; --offset-x: 0px;">I</span>
+      <span class="fall-letter" data-index="8" style="--rot: -1.8deg; --offset-x: 2px;">O</span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODERN BLACK & WHITE GRAPHIC NAVBAR
+       ========================================================= -->
+  <header class="navbar-wrapper" id="site-nav">
+    <nav class="editorial-nav" aria-label="Main Navigation">
+      <div class="nav-left">
+        <span class="checker-block" aria-hidden="true"></span>
+        <span class="nav-brand">PRANNY</span>
+      </div>
+
+      <div class="nav-right">
+        <a href="#about" class="nav-link">
+          <span class="link-text">ABOUT</span>
+          <span class="link-checker" aria-hidden="true"></span>
+        </a>
+        <a href="#work" class="nav-link">
+          <span class="link-text">WORK</span>
+          <span class="link-checker" aria-hidden="true"></span>
+        </a>
+        <a href="#contact" class="nav-link">
+          <span class="link-text">CONTACT</span>
+          <span class="link-checker" aria-hidden="true"></span>
+        </a>
+        <span class="checker-block checker-block-end" aria-hidden="true"></span>
+        <span class="mobile-menu-label" aria-hidden="true">MENU</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       DEEP BLACK HERO SCREEN
+       ========================================================= -->
+  <main class="hero-screen" id="hero">
+    <!-- Hidden Graphic Design System Canvas Layer -->
+    <canvas id="sketch-canvas" class="sketch-canvas" aria-hidden="true"></canvas>
+
+    <!-- Main Title Composition -->
+    <div class="title-container" id="title-container">
+      <div class="main-title-wrapper" id="main-title-wrapper">
+        <h1 class="main-title" id="main-title">PRANNY</h1>
+        <canvas id="pranny-smoke-canvas" class="pranny-smoke-canvas" aria-hidden="true"></canvas>
+      </div>
+      <p class="role-title" id="role-title">VISUAL DESIGNER</p>
+      <p class="disciplines" id="disciplines">BRAND IDENTITY · GRAPHIC DESIGN · ART DIRECTION</p>
+    </div>
+
+    <!-- ZIG-ZAG SCREEN BREAK TRANSITION DIVIDER -->
+    <div class="zigzag-break-container" id="zigzag-container" aria-hidden="true">
+      <svg class="zigzag-svg" id="zigzag-svg" viewBox="0 0 1440 240" preserveAspectRatio="none">
+        <path id="zigzag-path" d="M 0,0 L 0,40 L 130,195 L 270,35 L 440,215 L 620,45 L 790,210 L 970,30 L 1150,215 L 1310,55 L 1440,195 L 1440,0 Z" fill="#000000" />
+      </svg>
+    </div>
+  </main>
+
+  <!-- =========================================================
+       ABOUT SCREEN 01 — CLEAN INTRO (WARM PALE PINK / CREAM)
+       ========================================================= -->
+  <section class="about-screen-one" id="about">
+    <div class="about-one-container">
+      <div class="about-meta">
+        <span class="about-kicker">ABOUT</span>
+      </div>
+      <h2 class="about-statement">
+        I DESIGN WITH MORE THAN AESTHETICS IN MIND.
+      </h2>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHECKERBOARD CURTAIN TRANSITION
+       ========================================================= -->
+  <div class="checkerboard-curtain-wrapper" id="checker-wrapper" aria-hidden="true">
+    <div class="checkerboard-curtain" id="checker-curtain"></div>
+  </div>
+
+  <!-- =========================================================
+       ABOUT SCREEN 02 — 3 × 2 RASPBERRY BUTTON GRID
+       ========================================================= -->
+  <section class="about-screen-two" id="about-info">
+    <div class="about-two-container">
+      
+      <!-- Section Header -->
+      <div class="about-two-header">
+        <span class="about-two-kicker">[ 02 // PROFILE ]</span>
+        <h3 class="about-two-title">INFORMATION & DISCIPLINES</h3>
+      </div>
+
+      <!-- Symmetrical 3 × 2 Information Button Grid -->
+      <div class="info-blocks-grid">
+        
+        <!-- ROW 1 / BUTTON 01: WHO I AM -->
+        <article class="info-block">
+          <div class="card-ghost-layer" aria-hidden="true">
+            <span class="ghost-letter">P</span>
+          </div>
+          <div class="card-inner">
+            <h4 class="btn-main-heading">WHO I AM</h4>
+            <div class="editorial-black-tag">
+              <span class="tag-line">PRANJAL</span>
+              <span class="tag-line">VISUAL DESIGNER</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ROW 1 / BUTTON 02: MY EDGE -->
+        <article class="info-block">
+          <div class="card-ghost-layer" aria-hidden="true">
+            <svg viewBox="0 0 140 100" class="ghost-svg">
+              <circle cx="50" cy="50" r="34" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+              <circle cx="90" cy="50" r="34" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+            </svg>
+          </div>
+          <div class="card-inner">
+            <h4 class="btn-main-heading">MY EDGE</h4>
+            <div class="editorial-black-tag">
+              <span class="tag-line">DESIGN + BUSINESS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ROW 1 / BUTTON 03: WHAT I DO -->
+        <article class="info-block">
+          <div class="card-ghost-layer" aria-hidden="true">
+            <span class="ghost-type-text">FORM<br>TYPE<br>IMAGE</span>
+          </div>
+          <div class="card-inner">
+            <h4 class="btn-main-heading">WHAT I DO</h4>
+            <div class="editorial-black-tag">
+              <span class="tag-line">BRAND IDENTITY</span>
+              <span class="tag-line">PACKAGING</span>
+              <span class="tag-line">SOCIAL</span>
+              <span class="tag-line">CAMPAIGNS</span>
+              <span class="tag-line">EXPERIMENTAL DESIGN</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ROW 2 / BUTTON 04: BUSINESS -->
+        <article class="info-block">
+          <div class="card-ghost-layer" aria-hidden="true">
+            <svg viewBox="0 0 140 100" class="ghost-svg">
+              <line x1="10" y1="25" x2="130" y2="25" stroke="#FFFFFF" stroke-width="1" />
+              <line x1="10" y1="50" x2="130" y2="50" stroke="#FFFFFF" stroke-width="1" />
+              <line x1="10" y1="75" x2="130" y2="75" stroke="#FFFFFF" stroke-width="1" />
+              <line x1="45" y1="10" x2="45" y2="90" stroke="#FFFFFF" stroke-width="1" />
+              <line x1="95" y1="10" x2="95" y2="90" stroke="#FFFFFF" stroke-width="1" />
+            </svg>
+          </div>
+          <div class="card-inner">
+            <h4 class="btn-main-heading">BUSINESS</h4>
+            <div class="editorial-black-tag">
+              <span class="tag-line">OPERATIONS</span>
+              <span class="tag-line">PROJECT MANAGEMENT</span>
+              <span class="tag-line">CONTENT</span>
+              <span class="tag-line">MARKETING</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ROW 2 / BUTTON 05: ADAPTABILITY -->
+        <article class="info-block">
+          <div class="card-ghost-layer" aria-hidden="true">
+            <svg viewBox="0 0 140 100" class="ghost-svg">
+              <polygon points="20,80 70,20 120,80" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+              <circle cx="70" cy="55" r="22" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+            </svg>
+          </div>
+          <div class="card-inner">
+            <h4 class="btn-main-heading">ADAPTABILITY</h4>
+            <div class="editorial-black-tag">
+              <span class="tag-line">MINIMAL</span>
+              <span class="tag-line">BOLD</span>
+              <span class="tag-line">PLAYFUL</span>
+              <span class="tag-line">EDITORIAL</span>
+              <span class="tag-line">UNEXPECTED</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ROW 2 / BUTTON 06: TOOLS -->
+        <article class="info-block">
+          <div class="card-ghost-layer" aria-hidden="true">
+            <svg viewBox="0 0 140 100" class="ghost-svg">
+              <circle cx="30" cy="30" r="10" stroke="#FFFFFF" stroke-width="1" fill="none" />
+              <circle cx="70" cy="30" r="10" stroke="#FFFFFF" stroke-width="1" fill="none" />
+              <circle cx="110" cy="30" r="10" stroke="#FFFFFF" stroke-width="1" fill="none" />
+              <rect x="25" y="60" width="90" height="24" stroke="#FFFFFF" stroke-width="1" fill="none" />
+            </svg>
+          </div>
+          <div class="card-inner">
+            <h4 class="btn-main-heading">TOOLS</h4>
+            <div class="editorial-black-tag">
+              <span class="tag-line">PHOTOSHOP</span>
+              <span class="tag-line">ILLUSTRATOR</span>
+              <span class="tag-line">FIGMA</span>
+              <span class="tag-line">CANVA</span>
+              <span class="tag-line">PREMIERE PRO</span>
+            </div>
+          </div>
+        </article>
+
+      </div> <!-- /info-blocks-grid -->
+
+      <!-- Clean Bottom Spacer -->
+      <div class="about-bottom-spacer"></div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       WORK / PROJECTS SECTION — SMOOTH 3D PERSPECTIVE GALLERY
+       ========================================================= -->
+  <section class="work-section" id="work">
+    <div class="work-container">
+      
+      <!-- Section Header -->
+      <div class="work-header">
+        <span class="work-kicker">[ 03 // ARCHIVE ]</span>
+        <h2 class="work-main-title">SELECTED WORK</h2>
+        <p class="work-subtitle">06 PROJECTS · 2026</p>
+      </div>
+
+      <!-- 3D Perspective Gallery Stage -->
+      <div class="work-gallery-stage" id="work-gallery-stage" aria-label="Interactive 3D Project Gallery">
+        <div class="gallery-3d-track" id="gallery-3d-track">
+
+          <!-- PANEL 01: LUMA -->
+          <a href="luma.html" class="gallery-panel gallery-panel-link" data-index="0" data-proj-num="PROJECT 01" data-proj-title="LUMA" data-proj-cat="BRAND IDENTITY / FITNESS WEAR" aria-label="Project 01: LUMA — Brand Identity / Fitness Wear">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">01</span>
+                <span class="panel-meta">BRAND IDENTITY</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/luma-cover.jpg" alt="LUMA Brand Identity — Activewear Design System" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">LUMA</h3>
+                <p class="panel-category">BRAND IDENTITY / FITNESS WEAR</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 02: VÉLORA -->
+          <a href="velora.html" class="gallery-panel gallery-panel-link" data-index="1" data-proj-num="PROJECT 02" data-proj-title="VÉLORA" data-proj-cat="LUXURY PACKAGING" aria-label="Project 02: VÉLORA — Luxury Packaging">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">02</span>
+                <span class="panel-meta">PACKAGING</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/velora-cover.jpg" alt="VÉLORA Luxury Packaging — Botanical Skincare Design System" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">VÉLORA</h3>
+                <p class="panel-category">LUXURY PACKAGING</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 03: EXPERIMENTAL DESIGNS -->
+          <a href="experimental-designs.html" class="gallery-panel gallery-panel-link" data-index="2" data-proj-num="PROJECT 03" data-proj-title="EXPERIMENTAL DESIGNS" data-proj-cat="10 POSTER COLLECTION" aria-label="Project 03: EXPERIMENTAL DESIGNS — 10 Poster Collection">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">03</span>
+                <span class="panel-meta">POSTER COLLECTION</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/experimental-designs-cover.jpg" alt="EXPERIMENTAL DESIGNS — 10 Poster Collection" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">EXPERIMENTAL DESIGNS</h3>
+                <p class="panel-category">10 POSTER COLLECTION</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 04: MOFFEE -->
+          <a href="moffee.html" class="gallery-panel gallery-panel-link" data-index="3" data-proj-num="PROJECT 04" data-proj-title="MOFFEE" data-proj-cat="SOCIAL MEDIA & BRAND CONTENT" aria-label="Project 04: MOFFEE — Social Media & Brand Content">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">04</span>
+                <span class="panel-meta">SOCIAL MEDIA</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/moffee-cover.jpg" alt="MOFFEE Social Media and Brand Content System" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">MOFFEE</h3>
+                <p class="panel-category">SOCIAL MEDIA & BRAND CONTENT</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 05: MONSTER MUNCH -->
+          <a href="monster-munch.html" class="gallery-panel gallery-panel-link" data-index="4" data-proj-num="PROJECT 05" data-proj-title="MONSTER MUNCH" data-proj-cat="SNACK PACKAGING" aria-label="Project 05: MONSTER MUNCH — Snack Packaging">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">05</span>
+                <span class="panel-meta">PACKAGING</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/monster-munch-cover.jpg" alt="MONSTER MUNCH Playful Snack Packaging Design System" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">MONSTER MUNCH</h3>
+                <p class="panel-category">SNACK PACKAGING</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 06: SOCIAL MEDIA (NÉVRE + SOLRA) -->
+          <a href="nevre-solra.html" class="gallery-panel gallery-panel-link" data-index="5" data-proj-num="PROJECT 06" data-proj-title="SOCIAL MEDIA" data-proj-cat="NÉVRE (INSTAGRAM STORIES) · SOLRA (CAROUSEL)" aria-label="Project 06: SOCIAL MEDIA — NÉVRE and SOLRA">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">06</span>
+                <span class="panel-meta">SOCIAL MEDIA</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/nevre-solra-cover.jpg" alt="NÉVRE and SOLRA Social Content Design" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body panel-dual-body">
+                <div class="dual-subproject">
+                  <h3 class="panel-title-sub">NÉVRE</h3>
+                  <p class="panel-category">INSTAGRAM STORIES</p>
+                </div>
+                <div class="dual-divider" aria-hidden="true"></div>
+                <div class="dual-subproject">
+                  <h3 class="panel-title-sub">SOLRA</h3>
+                  <p class="panel-category">SOCIAL MEDIA CAROUSEL</p>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 07 (LOOP 01): LUMA -->
+          <a href="luma.html" class="gallery-panel gallery-panel-link" data-index="6" data-proj-num="PROJECT 01" data-proj-title="LUMA" data-proj-cat="BRAND IDENTITY / FITNESS WEAR" aria-label="Project 01: LUMA — Brand Identity / Fitness Wear">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">01</span>
+                <span class="panel-meta">BRAND IDENTITY</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/luma-cover.jpg" alt="LUMA Brand Identity — Activewear Design System" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">LUMA</h3>
+                <p class="panel-category">BRAND IDENTITY / FITNESS WEAR</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 08 (LOOP 02): VÉLORA -->
+          <a href="velora.html" class="gallery-panel gallery-panel-link" data-index="7" data-proj-num="PROJECT 02" data-proj-title="VÉLORA" data-proj-cat="LUXURY PACKAGING" aria-label="Project 02: VÉLORA — Luxury Packaging">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">02</span>
+                <span class="panel-meta">PACKAGING</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/velora-cover.jpg" alt="VÉLORA Luxury Packaging — Botanical Skincare Design System" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">VÉLORA</h3>
+                <p class="panel-category">LUXURY PACKAGING</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 09 (LOOP 03): EXPERIMENTAL DESIGNS -->
+          <a href="experimental-designs.html" class="gallery-panel gallery-panel-link" data-index="8" data-proj-num="PROJECT 03" data-proj-title="EXPERIMENTAL DESIGNS" data-proj-cat="10 POSTER COLLECTION" aria-label="Project 03: EXPERIMENTAL DESIGNS — 10 Poster Collection">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">03</span>
+                <span class="panel-meta">POSTER COLLECTION</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/experimental-designs-cover.jpg" alt="EXPERIMENTAL DESIGNS — 10 Poster Collection" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">EXPERIMENTAL DESIGNS</h3>
+                <p class="panel-category">10 POSTER COLLECTION</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 10 (LOOP 04): MOFFEE -->
+          <a href="moffee.html" class="gallery-panel gallery-panel-link" data-index="9" data-proj-num="PROJECT 04" data-proj-title="MOFFEE" data-proj-cat="SOCIAL MEDIA & BRAND CONTENT" aria-label="Project 04: MOFFEE — Social Media & Brand Content">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">04</span>
+                <span class="panel-meta">SOCIAL MEDIA</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/moffee-cover.jpg" alt="MOFFEE Social Media and Brand Content System" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">MOFFEE</h3>
+                <p class="panel-category">SOCIAL MEDIA & BRAND CONTENT</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 11 (LOOP 05): MONSTER MUNCH -->
+          <a href="monster-munch.html" class="gallery-panel gallery-panel-link" data-index="10" data-proj-num="PROJECT 05" data-proj-title="MONSTER MUNCH" data-proj-cat="SNACK PACKAGING" aria-label="Project 05: MONSTER MUNCH — Snack Packaging">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">05</span>
+                <span class="panel-meta">PACKAGING</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/monster-munch-cover.jpg" alt="MONSTER MUNCH Playful Snack Packaging Design System" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body">
+                <h3 class="panel-title">MONSTER MUNCH</h3>
+                <p class="panel-category">SNACK PACKAGING</p>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+          <!-- PANEL 12 (LOOP 06): SOCIAL MEDIA (NÉVRE + SOLRA) -->
+          <a href="nevre-solra.html" class="gallery-panel gallery-panel-link" data-index="11" data-proj-num="PROJECT 06" data-proj-title="SOCIAL MEDIA" data-proj-cat="NÉVRE (INSTAGRAM STORIES) · SOLRA (CAROUSEL)" aria-label="Project 06: SOCIAL MEDIA — NÉVRE and SOLRA">
+            <div class="panel-inner">
+              <div class="panel-header">
+                <span class="panel-num">06</span>
+                <span class="panel-meta">SOCIAL MEDIA</span>
+              </div>
+              <div class="panel-cover-frame panel-cover-has-image">
+                <img src="assets/project-covers/nevre-solra-cover.jpg" alt="NÉVRE and SOLRA Social Content Design" class="panel-cover-img" loading="eager" draggable="false">
+                <span class="cover-frame-corner cfc-tl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-tr" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-bl" aria-hidden="true">+</span>
+                <span class="cover-frame-corner cfc-br" aria-hidden="true">+</span>
+              </div>
+              <div class="panel-body panel-dual-body">
+                <div class="dual-subproject">
+                  <h3 class="panel-title-sub">NÉVRE</h3>
+                  <p class="panel-category">INSTAGRAM STORIES</p>
+                </div>
+                <div class="dual-divider" aria-hidden="true"></div>
+                <div class="dual-subproject">
+                  <h3 class="panel-title-sub">SOLRA</h3>
+                  <p class="panel-category">SOCIAL MEDIA CAROUSEL</p>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <span class="panel-tag">[ VIEW PROJECT ]</span>
+                <span class="panel-corner-mark" aria-hidden="true">+</span>
+              </div>
+            </div>
+            <div class="panel-shadow"></div>
+          </a>
+
+        </div> <!-- /gallery-3d-track -->
+      </div> <!-- /work-gallery-stage -->
+
+      <!-- Project Indicator & Navigation Hint -->
+      <div class="gallery-status-bar" id="gallery-status-bar">
+        <span class="gallery-indicator" id="gallery-counter">01 / 06</span>
+        <div class="gallery-nav-dots" id="gallery-dots">
+          <button class="nav-dot is-active" data-index="0" aria-label="Go to project 1"></button>
+          <button class="nav-dot" data-index="1" aria-label="Go to project 2"></button>
+          <button class="nav-dot" data-index="2" aria-label="Go to project 3"></button>
+          <button class="nav-dot" data-index="3" aria-label="Go to project 4"></button>
+          <button class="nav-dot" data-index="4" aria-label="Go to project 5"></button>
+          <button class="nav-dot" data-index="5" aria-label="Go to project 6"></button>
+        </div>
+        <span class="gallery-hint">DRAG OR SCROLL TO EXPLORE</span>
+      </div>
+
+    </div> <!-- /work-container -->
+  </section>
+
+  <!-- =========================================================
+       CONTACT SCREEN — EDITORIAL PORTFOLIO SIGN-OFF
+       ========================================================= -->
+  <section class="contact-screen" id="contact" aria-label="Contact and Inquiries">
+    <div class="contact-container">
+      
+      <!-- Top Meta Tag / Section Header -->
+      <div class="contact-meta-header reveal-step-1">
+        <div class="contact-kicker-wrap">
+          <span class="contact-num">03</span>
+          <span class="contact-kicker">[ 03 // HAVE A VISION? ]</span>
+        </div>
+        <div class="availability-badge" aria-label="Availability status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">AVAILABLE FOR OPPORTUNITIES</span>
+        </div>
+      </div>
+
+      <!-- Main Headline Hero Composition -->
+      <div class="contact-hero-composition">
+        <h2 class="contact-main-headline reveal-step-2">
+          <span class="headline-row">LET'S MAKE</span>
+          <span class="headline-row">SOMETHING</span>
+          <span class="headline-row headline-accent">GOOD.</span>
+        </h2>
+        <p class="contact-statement-lead">
+          <span class="lead-line reveal-step-2-sub">You bring the vision.</span>
+          <span class="lead-line reveal-step-3">I’ll figure out how to make it happen.</span>
+        </p>
+      </div>
+
+      <!-- Recruiter CTA Info Banner -->
+      <div class="recruiter-cta-banner reveal-step-5">
+        <div class="cta-left">
+          <span class="cta-label">OPEN FOR ROLES</span>
+          <p class="cta-heading">FREELANCE / FULL-TIME OPPORTUNITIES / COLLABORATIONS</p>
+        </div>
+        <div class="cta-right">
+          <span class="cta-sub">READY TO DISCUSS YOUR NEXT PROJECT OR ROLE</span>
+        </div>
+      </div>
+
+      <!-- Direct Contact Channels Grid (Email + WhatsApp) -->
+      <div class="contact-channels-grid reveal-step-4">
+        
+        <!-- EMAIL CARD -->
+        <a href="mailto:pranjal454jadon@gmail.com" class="contact-channel-card" aria-label="Send email to pranjal454jadon@gmail.com">
+          <div class="channel-card-top">
+            <span class="channel-num">01</span>
+            <span class="channel-tag">DIRECT INQUIRIES</span>
+            <span class="channel-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="channel-card-body">
+            <span class="channel-label">EMAIL</span>
+            <span class="channel-val">pranjal454jadon@gmail.com</span>
+          </div>
+          <div class="channel-card-footer">
+            <span class="channel-action">CLICK TO SEND EMAIL →</span>
+          </div>
+        </a>
+
+        <!-- WHATSAPP CARD -->
+        <a href="https://wa.me/919315446326" target="_blank" rel="noopener noreferrer" class="contact-channel-card" aria-label="Message on WhatsApp: 9315446326">
+          <div class="channel-card-top">
+            <span class="channel-num">02</span>
+            <span class="channel-tag">QUICK MESSAGE</span>
+            <span class="channel-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="channel-card-body">
+            <span class="channel-label">WHATSAPP / PHONE</span>
+            <span class="channel-val">9315446326</span>
+          </div>
+          <div class="channel-card-footer">
+            <span class="channel-action">CHAT ON WHATSAPP →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Final Editorial Sign-Off & Back to Top -->
+      <footer class="contact-site-footer reveal-step-5">
+        <div class="site-footer-rule"></div>
+        <div class="site-footer-row">
+          <div class="footer-brand-wrap">
+            <span class="footer-brand-name">PRANNY</span>
+            <span class="footer-brand-dash">—</span>
+            <span class="footer-brand-role">VISUAL DESIGNER · 2026</span>
+          </div>
+          <a href="#hero" class="back-to-top-btn" aria-label="Back to top of page">
+            <span>BACK TO TOP</span>
+            <span class="top-arrow" aria-hidden="true">↑</span>
+          </a>
+        </div>
+      </footer>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROJECT VIEW FULL-SCREEN OVERLAY
+       ========================================================= -->
+  <div class="project-view-overlay" id="project-view" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="project-view-inner">
+      
+      <!-- Top Navigation -->
+      <nav class="project-view-nav">
+        <button type="button" class="back-to-work-btn" id="back-to-work" aria-label="Back to Work">
+          <span class="back-arrow" aria-hidden="true">←</span>
+          <span class="back-text">BACK TO WORK</span>
+        </button>
+      </nav>
+
+      <!-- =========================================================
+           LUMA CASE STUDY EDITORIAL PRESENTATION
+           ========================================================= -->
+      <article class="luma-case-study" id="luma-case-study">
+        
+        <!-- OPENING HERO COVER -->
+        <header class="luma-hero-section">
+          <div class="luma-hero-meta">
+            <span class="luma-kicker">[ CASE STUDY 01 ]</span>
+            <span class="luma-category-tag">WOMEN'S ACTIVEWEAR</span>
+          </div>
+          
+          <div class="luma-hero-title-group">
+            <span class="luma-specimen-num">01</span>
+            <h1 class="luma-main-title">LUMA</h1>
+            <p class="luma-subheading">BRAND IDENTITY CASE STUDY</p>
+            <p class="luma-category-label">Women's Activewear · Brand Identity & Design System</p>
+          </div>
+
+          <!-- Cover Artwork (luma-01.png) -->
+          <figure class="luma-cover-frame">
+            <img src="assets/luma-01.png" alt="LUMA Brand Identity Cover" class="luma-img" loading="eager">
+          </figure>
+        </header>
+
+        <!-- EDITORIAL BRIEF & OBJECTIVES SPEC SPECIMEN GRID -->
+        <section class="luma-brief-grid">
+          <div class="brief-card">
+            <span class="brief-card-num">01 // THE IDEA</span>
+            <h3 class="brief-card-title">FEEL GOOD, MOVE FREE</h3>
+            <p class="brief-card-text">LUMA is a women's activewear brand built around a simple belief: feeling good in what you wear can change how you move.</p>
+          </div>
+
+          <div class="brief-card">
+            <span class="brief-card-num">02 // THE CHALLENGE</span>
+            <h3 class="brief-card-title">BREAKING PREDICTABILITY</h3>
+            <p class="brief-card-text">Create an activewear identity that feels expressive, feminine and visually exciting in a category often dominated by minimal, predictable design.</p>
+          </div>
+
+          <div class="brief-card">
+            <span class="brief-card-num">03 // THE OBJECTIVE</span>
+            <h3 class="brief-card-title">DISTINCTIVE BRAND SYSTEM</h3>
+            <p class="brief-card-text">Build a distinctive brand system that balances performance, comfort and self-expression through colour, silhouette and playful graphic details.</p>
+          </div>
+
+          <div class="brief-card brief-card-direction">
+            <span class="brief-card-num">04 // CREATIVE DIRECTION</span>
+            <div class="direction-tags">
+              <span class="d-tag">BRIGHT</span>
+              <span class="d-tag">ENERGETIC</span>
+              <span class="d-tag">CONFIDENT</span>
+              <span class="d-tag">PLAYFUL</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 11 DESIGNED CASE STUDY EXHIBITS (luma-02.png to luma-12.png) -->
+        <div class="luma-exhibits-flow">
+
+          <!-- 01. EXECUTIVE SUMMARY -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 01 ]</span>
+              <h3 class="exhibit-title">EXECUTIVE SUMMARY</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-02.png" alt="LUMA Executive Summary" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 02. MOODBOARD / CREATIVE DIRECTION -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 02 ]</span>
+              <h3 class="exhibit-title">MOODBOARD & CREATIVE DIRECTION</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-03.png" alt="LUMA Moodboard and Creative Direction" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 03. LOGO -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 03 ]</span>
+              <h3 class="exhibit-title">PRIMARY LOGO & WORDMARK</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-04.png" alt="LUMA Primary Logo" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 04. LOGO & IDENTITY SYSTEM -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 04 ]</span>
+              <h3 class="exhibit-title">LOGO & IDENTITY SYSTEM</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-05.png" alt="LUMA Logo and Identity System" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 05. COLOUR SYSTEM -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 05 ]</span>
+              <h3 class="exhibit-title">COLOUR SYSTEM</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-06.png" alt="LUMA Colour System" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 06. CAMPAIGN / BRAND APPLICATION -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 06 ]</span>
+              <h3 class="exhibit-title">CAMPAIGN & BRAND APPLICATION</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-07.png" alt="LUMA Campaign Brand Application" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 07. CAMPAIGN ART DIRECTION -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 07 ]</span>
+              <h3 class="exhibit-title">CAMPAIGN ART DIRECTION</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-08.png" alt="LUMA Campaign Art Direction" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 08. PACKAGING -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 08 ]</span>
+              <h3 class="exhibit-title">PACKAGING</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-09.png" alt="LUMA Packaging" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 09. STRUCTURAL PACKAGING / DIELINE -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 09 ]</span>
+              <h3 class="exhibit-title">STRUCTURAL PACKAGING & DIELINE</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-10.png" alt="LUMA Structural Packaging and Dieline" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 10. SOCIAL MEDIA -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 10 ]</span>
+              <h3 class="exhibit-title">SOCIAL MEDIA</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-11.png" alt="LUMA Social Media" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+          <!-- 11. CLOSING STATEMENT -->
+          <section class="luma-exhibit">
+            <div class="exhibit-header">
+              <span class="exhibit-num">[ 11 ]</span>
+              <h3 class="exhibit-title">CLOSING STATEMENT</h3>
+            </div>
+            <figure class="exhibit-frame">
+              <img src="assets/luma-12.png" alt="LUMA Closing Statement" class="luma-img" loading="lazy">
+            </figure>
+          </section>
+
+        </div> <!-- /luma-exhibits-flow -->
+
+        <!-- CASE STUDY BOTTOM FOOTER -->
+        <footer class="luma-case-footer">
+          <div class="footer-rule"></div>
+          <div class="footer-action-wrap">
+            <button type="button" class="back-to-work-bottom-btn" id="back-to-work-bottom" aria-label="Back to Selected Work">
+              <span class="back-arrow" aria-hidden="true">←</span>
+              <span class="back-text">BACK TO SELECTED WORK</span>
+            </button>
+            <span class="footer-specimen-tag">PRANNY · VISUAL DESIGNER · 2026</span>
+          </div>
+        </footer>
+
+      </article> <!-- /luma-case-study -->
+
+      <!-- GENERIC PLACEHOLDER FOR OTHER 5 PROJECTS -->
+      <div class="generic-project-placeholder" id="generic-project-placeholder" style="display: none;">
+        <header class="project-view-header">
+          <span class="project-view-num" id="pv-num">PROJECT</span>
+          <h2 class="project-view-name" id="pv-title">PROJECT</h2>
+          <p class="project-view-cat" id="pv-cat">CASE STUDY</p>
+        </header>
+
+        <main class="project-view-visual-area">
+          <div class="project-placeholder-box">
+            <div class="placeholder-crosshair ph-tl" aria-hidden="true">+</div>
+            <div class="placeholder-crosshair ph-tr" aria-hidden="true">+</div>
+            <div class="placeholder-crosshair ph-bl" aria-hidden="true">+</div>
+            <div class="placeholder-crosshair ph-br" aria-hidden="true">+</div>
+            <div class="placeholder-notice">
+              <span class="placeholder-icon" aria-hidden="true">⌖</span>
+              <p class="placeholder-label">[ PROJECT ARTWORK WILL BE ADDED LATER ]</p>
+              <span class="placeholder-sublabel">CASE STUDY SPECIMEN · 2026</span>
+            </div>
+          </div>
+        </main>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       EDITORIAL FRAME SLIDE PAGE TRANSITION OVERLAY
+       ========================================================= -->
+  <div id="editorial-slide" class="editorial-slide-overlay" aria-hidden="true">
+    <div class="editorial-slide-panel">
+      <!-- Corner Framing Accents -->
+      <span class="panel-corner-cross pc-tl" aria-hidden="true">+</span>
+      <span class="panel-corner-cross pc-tr" aria-hidden="true">+</span>
+      <span class="panel-corner-cross pc-bl" aria-hidden="true">+</span>
+      <span class="panel-corner-cross pc-br" aria-hidden="true">+</span>
+      
+      <!-- Top Editorial Subtitle / Meta -->
+      <header class="editorial-panel-header">
+        <span class="editorial-panel-kicker">PRANNY SINGH / GRAPHIC DESIGN / 2026</span>
+        <span class="editorial-panel-spec">[ 04 // WORK TRANSITION ]</span>
+      </header>
+      
+      <!-- Oversized Editorial Typography Composition -->
+      <div class="editorial-poster-body">
+        <span class="editorial-poster-num">04</span>
+        <h2 class="editorial-poster-title">SELECTED</h2>
+        <h2 class="editorial-poster-title">WORK</h2>
+      </div>
+      
+      <!-- Bottom Editorial Footer -->
+      <footer class="editorial-panel-footer">
+        <span class="editorial-panel-note">FORM · TYPE · IMAGE · ARCHIVE</span>
+        <span class="editorial-panel-bleed">BLEED: 0.0mm // TRUE VECTOR</span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=lumaReady"></script>
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMA — Brand Identity & Apparel Design Case Study · Pranny</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0A0C0B;
+      --card-bg: #0E100F;
+      --text: #FFFFFF;
+      --text-muted: #8E8E93;
+      --terracotta: #D45B4B;
+      --raspberry: #BE2751;
+      --border: rgba(255, 255, 255, 0.12);
+      --font-display: "Syne", sans-serif;
+      --font-sans: "Plus Jakarta Sans", sans-serif;
+      --font-mono: "Space Mono", monospace;
+      --font-serif: "Instrument Serif", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Nav */
+    .luma-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px clamp(20px, 5vw, 64px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .nav-specimen {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Main Container */
+    .luma-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vh, 60px) clamp(20px, 5vw, 64px) 120px;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(56px, 8.5vh, 96px);
+    }
+
+    /* Opening Hero */
+    .luma-hero {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(24px, 3.5vh, 36px);
+      width: 100%;
+    }
+
+    .luma-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .luma-kicker {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--terracotta);
+      text-transform: uppercase;
+    }
+
+    .luma-tag {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    .luma-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .luma-num {
+      font-family: var(--font-mono);
+      font-size: clamp(14px, 1.6vw, 20px);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .luma-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 100px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.9;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .luma-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.5vw, 20px);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--terracotta);
+      text-transform: uppercase;
+    }
+
+    .luma-category {
+      font-family: var(--font-mono);
+      font-size: clamp(10.5px, 1.05vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Brief Statement Box */
+    .brief-intro-box {
+      background: linear-gradient(145deg, rgba(212, 91, 75, 0.08), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-left: 3px solid var(--terracotta);
+      border-radius: 6px;
+      padding: clamp(22px, 3vh, 32px) clamp(20px, 3vw, 32px);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .brief-lead {
+      font-size: clamp(15px, 1.25vw, 18px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .info-pill {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #FFFFFF;
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 5px 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    /* Frames & Images */
+    .luma-frame {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+      position: relative;
+    }
+
+    .luma-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Section Layout */
+    .luma-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .section-header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      width: 100%;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .section-num {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--terracotta);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.8vw, 24px);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Meta Grid (Editorial Description + Takeaway) */
+    .luma-meta-card {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: clamp(16px, 2.5vw, 32px);
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: clamp(18px, 2.5vh, 26px) clamp(20px, 2.5vw, 28px);
+    }
+
+    .meta-desc-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--terracotta);
+      text-transform: uppercase;
+    }
+
+    .section-desc {
+      font-size: clamp(13.5px, 1.05vw, 15px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .meta-takeaway-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      padding-left: clamp(16px, 2vw, 24px);
+      justify-content: center;
+    }
+
+    .section-takeaway {
+      font-family: var(--font-mono);
+      font-size: clamp(12px, 0.95vw, 13.5px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: #FFFFFF;
+    }
+
+    .section-takeaway strong {
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .media-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    /* Closing Block */
+    .closing-block {
+      background: linear-gradient(145deg, rgba(212, 91, 75, 0.1), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: clamp(36px, 5vh, 60px) clamp(24px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .closing-motto {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .closing-desc {
+      font-size: clamp(14px, 1.15vw, 16.5px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+    }
+
+    /* Footer */
+    .luma-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 12px;
+      width: 100%;
+    }
+
+    .footer-rule {
+      width: 100%;
+      height: 1px;
+      background-color: var(--border);
+    }
+
+    .footer-action-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-btn-bottom {
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #FFFFFF;
+      border-radius: 4px;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-btn-bottom:hover {
+      background-color: transparent;
+      color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .footer-tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 860px) {
+      .luma-meta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .meta-takeaway-wrap {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 0;
+        padding-top: 14px;
+      }
+
+      .footer-action-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/view-scale.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="luma-nav" aria-label="Case Study Navigation">
+    <a href="index.html#work" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span>BACK TO WORK</span>
+    </a>
+    <span class="nav-specimen">PROJECT 01 // LUMA</span>
+  </nav>
+
+  <main class="luma-container">
+
+    <!-- HERO SECTION -->
+    <header class="luma-hero">
+      <div class="luma-hero-meta">
+        <span class="luma-kicker">[ CASE STUDY 01 ]</span>
+        <span class="luma-tag">BRAND IDENTITY & APPAREL</span>
+      </div>
+
+      <div class="luma-title-group">
+        <span class="luma-num">01</span>
+        <h1 class="luma-title">LUMA</h1>
+        <p class="luma-subheading">BRAND IDENTITY + APPAREL DESIGN</p>
+        <p class="luma-category">Women's Activewear · Brand Identity & Design System</p>
+      </div>
+
+      <!-- Hero Description & Info Row -->
+      <div class="brief-intro-box">
+        <p class="brief-lead">“A fitnesswear brand designed around confidence, movement and expressive everyday style.”</p>
+        <div class="pill-row">
+          <span class="info-pill">BRAND IDENTITY</span>
+          <span class="info-pill">APPAREL</span>
+          <span class="info-pill">PACKAGING</span>
+          <span class="info-pill">ART DIRECTION</span>
+        </div>
+      </div>
+
+      <!-- Hero Visual (luma-01.png) -->
+      <figure class="luma-frame">
+        <img src="assets/luma-01.png" alt="LUMA Brand Identity and Apparel Hero Visual" class="luma-img" loading="eager">
+      </figure>
+    </header>
+
+    <!-- 01 — THE BRAND -->
+    <section class="luma-section">
+      <div class="section-header-wrap">
+        <div class="section-title-wrap">
+          <span class="section-num">01</span>
+          <h2 class="section-title">THE BRAND</h2>
+        </div>
+        <span class="section-tag">CORE CONCEPT // CREATIVE DIRECTION</span>
+      </div>
+
+      <!-- Identity Visuals (luma-02.png & luma-03.png) -->
+      <div class="media-stack">
+        <figure class="luma-frame">
+          <img src="assets/luma-02.png" alt="LUMA Brand Overview and Executive Summary" class="luma-img" loading="lazy">
+        </figure>
+        <figure class="luma-frame">
+          <img src="assets/luma-03.png" alt="LUMA Moodboard and Creative Direction" class="luma-img" loading="lazy">
+        </figure>
+      </div>
+
+      <!-- Editorial Card -->
+      <div class="luma-meta-card">
+        <div class="meta-desc-wrap">
+          <span class="meta-label">BRAND PREMISE</span>
+          <p class="section-desc">LUMA is a women's fitnesswear concept created to make workout clothing feel confident, expressive and visually distinctive.</p>
+        </div>
+        <div class="meta-takeaway-wrap">
+          <p class="section-takeaway"><strong>Demonstrates:</strong> Ability to build a visual identity around a defined audience and brand personality.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — VISUAL IDENTITY -->
+    <section class="luma-section">
+      <div class="section-header-wrap">
+        <div class="section-title-wrap">
+          <span class="section-num">02</span>
+          <h2 class="section-title">VISUAL IDENTITY</h2>
+        </div>
+        <span class="section-tag">LOGO // TYPOGRAPHY // COLOUR SYSTEM</span>
+      </div>
+
+      <!-- Visuals (luma-04.png, luma-05.png, luma-06.png) -->
+      <div class="media-stack">
+        <figure class="luma-frame">
+          <img src="assets/luma-04.png" alt="LUMA Primary Logo and Wordmark" class="luma-img" loading="lazy">
+        </figure>
+        <figure class="luma-frame">
+          <img src="assets/luma-05.png" alt="LUMA Logo and Identity System" class="luma-img" loading="lazy">
+        </figure>
+        <figure class="luma-frame">
+          <img src="assets/luma-06.png" alt="LUMA Colour Palette and Typography Architecture" class="luma-img" loading="lazy">
+        </figure>
+      </div>
+
+      <!-- Editorial Card -->
+      <div class="luma-meta-card">
+        <div class="meta-desc-wrap">
+          <span class="meta-label">DESIGN SYSTEM</span>
+          <p class="section-desc">The identity combines energetic colour, clean typography and playful graphic details to create a system that feels confident without becoming overly loud.</p>
+        </div>
+        <div class="meta-takeaway-wrap">
+          <p class="section-takeaway"><strong>Demonstrates:</strong> Ability to create a consistent visual language across multiple brand elements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — APPAREL -->
+    <section class="luma-section">
+      <div class="section-header-wrap">
+        <div class="section-title-wrap">
+          <span class="section-num">03</span>
+          <h2 class="section-title">APPAREL DESIGN</h2>
+        </div>
+        <span class="section-tag">GARMENT APPLICATION // ART DIRECTION</span>
+      </div>
+
+      <!-- Visuals (luma-07.png, luma-08.png) -->
+      <div class="media-stack">
+        <figure class="luma-frame">
+          <img src="assets/luma-07.png" alt="LUMA Campaign and Apparel Application" class="luma-img" loading="lazy">
+        </figure>
+        <figure class="luma-frame">
+          <img src="assets/luma-08.png" alt="LUMA Campaign Photography and Art Direction" class="luma-img" loading="lazy">
+        </figure>
+      </div>
+
+      <!-- Editorial Card -->
+      <div class="luma-meta-card">
+        <div class="meta-desc-wrap">
+          <span class="meta-label">PRODUCT APPLICATION</span>
+          <p class="section-desc">Translating the identity into wearable pieces while keeping the graphics recognisable, functional and visually consistent.</p>
+        </div>
+        <div class="meta-takeaway-wrap">
+          <p class="section-takeaway"><strong>Demonstrates:</strong> Ability to adapt a brand identity into product-focused design.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — PACKAGING + TAGS -->
+    <section class="luma-section">
+      <div class="section-header-wrap">
+        <div class="section-title-wrap">
+          <span class="section-num">04</span>
+          <h2 class="section-title">PACKAGING + TAGS</h2>
+        </div>
+        <span class="section-tag">STRUCTURAL PACKAGING // PHYSICAL TOUCHPOINTS</span>
+      </div>
+
+      <!-- Visuals (luma-09.png, luma-10.png) -->
+      <div class="media-stack">
+        <figure class="luma-frame">
+          <img src="assets/luma-09.png" alt="LUMA Packaging Design, Labels and Hangtags" class="luma-img" loading="lazy">
+        </figure>
+        <figure class="luma-frame">
+          <img src="assets/luma-10.png" alt="LUMA Structural Packaging and Dieline Specifications" class="luma-img" loading="lazy">
+        </figure>
+      </div>
+
+      <!-- Editorial Card -->
+      <div class="luma-meta-card">
+        <div class="meta-desc-wrap">
+          <span class="meta-label">PHYSICAL TOUCHPOINTS</span>
+          <p class="section-desc">Extending the identity beyond the garment through packaging, tags and physical brand touchpoints.</p>
+        </div>
+        <div class="meta-takeaway-wrap">
+          <p class="section-takeaway"><strong>Demonstrates:</strong> Ability to carry a visual system across physical brand applications.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — BRAND EXPERIENCE -->
+    <section class="luma-section">
+      <div class="section-header-wrap">
+        <div class="section-title-wrap">
+          <span class="section-num">05</span>
+          <h2 class="section-title">BRAND EXPERIENCE</h2>
+        </div>
+        <span class="section-tag">DIGITAL CHANNELS // COMPLETE ECOSYSTEM</span>
+      </div>
+
+      <!-- Visual (luma-11.png) -->
+      <figure class="luma-frame">
+        <img src="assets/luma-11.png" alt="LUMA Social Media Channels and Complete Brand Experience" class="luma-img" loading="lazy">
+      </figure>
+
+      <!-- Editorial Card -->
+      <div class="luma-meta-card">
+        <div class="meta-desc-wrap">
+          <span class="meta-label">ECOSYSTEM CONTINUITY</span>
+          <p class="section-desc">Every touchpoint was designed to feel like part of the same LUMA world.</p>
+        </div>
+        <div class="meta-takeaway-wrap">
+          <p class="section-takeaway"><strong>Demonstrates:</strong> Ability to maintain consistency across a complete brand experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING STATEMENT & VISUAL -->
+    <section class="luma-section">
+      <figure class="luma-frame">
+        <img src="assets/luma-12.png" alt="LUMA Closing Brand Visual" class="luma-img" loading="lazy">
+      </figure>
+
+      <div class="closing-block">
+        <h3 class="closing-motto">“One identity. Designed to move.”</h3>
+        <p class="closing-desc">From initial brand positioning and expressive typography to wearable fitness apparel, physical packaging dielines, and digital touchpoints — LUMA delivers a cohesive, confidence-driven activewear experience.</p>
+      </div>
+    </section>
+
+    <!-- CLOSING & PORTFOLIO NAVIGATION -->
+    <footer class="luma-footer">
+      <div class="footer-rule"></div>
+      <div class="footer-action-wrap">
+        <a href="index.html#work" class="back-btn-bottom">
+          <span aria-hidden="true">←</span>
+          <span>BACK TO SELECTED WORK</span>
+        </a>
+        <span class="footer-tag">PRANNY · VISUAL DESIGNER · 2026</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/view-scale.js"></script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONSTER MUNCH — Playful Snack Packaging Case Study · Pranny</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0A0C0B;
+      --card-bg: #0E100F;
+      --text: #FFFFFF;
+      --text-muted: #8E8E93;
+      --yellow: #FFD028;
+      --orange: #FF5A1F;
+      --purple: #9B51E0;
+      --green: #27AE60;
+      --cyan: #00D2D3;
+      --border: rgba(255, 255, 255, 0.12);
+      --font-display: "Syne", sans-serif;
+      --font-sans: "Plus Jakarta Sans", sans-serif;
+      --font-mono: "Space Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Nav */
+    .mm-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px clamp(20px, 5vw, 64px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .nav-specimen {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Main Container */
+    .mm-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vh, 60px) clamp(20px, 5vw, 64px) 120px;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(48px, 7vh, 84px);
+    }
+
+    /* Opening Hero */
+    .mm-hero {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(24px, 3.5vh, 36px);
+      width: 100%;
+    }
+
+    .mm-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .mm-kicker {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--yellow);
+      text-transform: uppercase;
+    }
+
+    .mm-tag {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    .mm-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mm-num {
+      font-family: var(--font-mono);
+      font-size: clamp(14px, 1.6vw, 20px);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .mm-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 100px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.9;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .mm-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.5vw, 20px);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--yellow);
+      text-transform: uppercase;
+    }
+
+    .mm-category {
+      font-family: var(--font-mono);
+      font-size: clamp(10.5px, 1.05vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Cover Frame */
+    .mm-frame {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+      position: relative;
+    }
+
+    .mm-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Editorial Brief Grid */
+    .brief-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(16px, 2vw, 24px);
+      width: 100%;
+    }
+
+    .brief-card {
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: clamp(22px, 3vh, 32px) clamp(20px, 2.5vw, 28px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .brief-num {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--yellow);
+      text-transform: uppercase;
+    }
+
+    .brief-title {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.6vw, 22px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .brief-text {
+      font-size: clamp(13px, 1.05vw, 15px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .d-tag {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: #000000;
+      background-color: var(--yellow);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+
+    .d-tag-orange {
+      background-color: var(--orange);
+      color: #FFFFFF;
+    }
+
+    .d-tag-green {
+      background-color: var(--green);
+      color: #FFFFFF;
+    }
+
+    .d-tag-cyan {
+      background-color: var(--cyan);
+      color: #000000;
+    }
+
+    /* Exhibits Flow */
+    .exhibits-flow {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(56px, 8.5vh, 92px);
+      width: 100%;
+    }
+
+    .exhibit {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .exhibit-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .exhibit-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .exhibit-num {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--yellow);
+    }
+
+    .exhibit-title {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.4vw, 18px);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .exhibit-note {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .exhibit-caption {
+      font-size: clamp(13px, 1.05vw, 15px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 820px;
+      margin-top: -4px;
+    }
+
+    /* Footer */
+    .mm-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 24px;
+      width: 100%;
+    }
+
+    .footer-rule {
+      width: 100%;
+      height: 1px;
+      background-color: var(--border);
+    }
+
+    .footer-action-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-btn-bottom {
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #FFFFFF;
+      border-radius: 4px;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-btn-bottom:hover {
+      background-color: transparent;
+      color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .footer-tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .brief-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-action-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/view-scale.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="mm-nav" aria-label="Case Study Navigation">
+    <a href="index.html#work" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span>BACK TO WORK</span>
+    </a>
+    <span class="nav-specimen">PROJECT 03 // MONSTER MUNCH</span>
+  </nav>
+
+  <main class="mm-container">
+
+    <!-- 1. OPENING HERO -->
+    <header class="mm-hero">
+      <div class="mm-hero-meta">
+        <span class="mm-kicker">[ CASE STUDY 03 ]</span>
+        <span class="mm-tag">SNACK PACKAGING</span>
+      </div>
+
+      <div class="mm-title-group">
+        <span class="mm-num">03</span>
+        <h1 class="mm-title">MONSTER MUNCH</h1>
+        <p class="mm-subheading">PLAYFUL SNACK PACKAGING & CHARACTER SYSTEM</p>
+        <p class="mm-category">Character Illustration · Structural Dieline Design · Dynamic Colour Framework</p>
+      </div>
+
+      <!-- Hero Visual (monster-munch-hero.jpg) -->
+      <figure class="mm-frame">
+        <img src="assets/monster-munch/monster-munch-hero.jpg" alt="MONSTER MUNCH Playful Snack Packaging Hero Specimen" class="mm-img" loading="eager">
+      </figure>
+    </header>
+
+    <!-- 2. EDITORIAL BRIEF & PACKAGING CONCEPT -->
+    <section class="brief-grid" aria-label="Design Brief and Project Objectives">
+      <div class="brief-card">
+        <span class="brief-num">01 // THE IDEA</span>
+        <h3 class="brief-title">MISCHIEVOUS SNACKING</h3>
+        <p class="brief-text">MONSTER MUNCH is a character-driven snack packaging system created to inject vibrant personality, bold humour, and irresistible appetite appeal into the crowded snack aisle.</p>
+      </div>
+
+      <div class="brief-card">
+        <span class="brief-num">02 // THE CHALLENGE</span>
+        <h3 class="brief-title">SHELF STANDOUT</h3>
+        <p class="brief-text">Break away from generic, sterile snack packaging tropes with a distinctive monster mascot universe that connects instantly with youthful, energetic snack enthusiasts.</p>
+      </div>
+
+      <div class="brief-card">
+        <span class="brief-num">03 // THE OBJECTIVE</span>
+        <h3 class="brief-title">SCALABLE FLAVOUR SYSTEM</h3>
+        <p class="brief-text">Develop an adaptable packaging dieline and colour framework capable of expressing individual flavour profiles while preserving unmistakable overarching brand identity.</p>
+      </div>
+
+      <div class="brief-card">
+        <span class="brief-num">04 // CREATIVE DIRECTION</span>
+        <div class="tags-wrap">
+          <span class="d-tag">PLAYFUL</span>
+          <span class="d-tag d-tag-orange">COLOURFUL</span>
+          <span class="d-tag d-tag-green">BOLD</span>
+          <span class="d-tag d-tag-cyan">YOUTHFUL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 DESIGNED CASE STUDY EXHIBITS (01 to 05) -->
+    <div class="exhibits-flow">
+
+      <!-- 3. CHOMP DIELINE -->
+      <section class="exhibit">
+        <header class="exhibit-header">
+          <div class="exhibit-title-wrap">
+            <span class="exhibit-num">[ 01 ]</span>
+            <h2 class="exhibit-title">CHOMP — FLAVOUR PACKAGING & DIELINE</h2>
+          </div>
+          <span class="exhibit-note">FIRE-ROASTED BBQ // CHARACTER DIELINE</span>
+        </header>
+        <p class="exhibit-caption">CHOMP features a bold, wide-mouthed monster representing intense savoury crunch. The packaging dieline integrates expressive facial geometry, high-impact typography, and a structured nutritional hierarchy designed for maximum shelf visibility.</p>
+        <figure class="mm-frame">
+          <img src="assets/monster-munch/monster-munch-chomp-dieline.jpg" alt="MONSTER MUNCH Chomp Flavour Packaging Dieline" class="mm-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 4. PUFF DIELINE -->
+      <section class="exhibit">
+        <header class="exhibit-header">
+          <div class="exhibit-title-wrap">
+            <span class="exhibit-num">[ 02 ]</span>
+            <h2 class="exhibit-title">PUFF — FLAVOUR PACKAGING & DIELINE</h2>
+          </div>
+          <span class="exhibit-note">CHEDDAR CHEESE // AIR-POPPED TEXTURE</span>
+        </header>
+        <p class="exhibit-caption">PUFF embodies airy, cloud-like cheese indulgence with soft rounded character forms, vibrant golden-yellow palettes, and a playful illustrated narrative across all dieline panels.</p>
+        <figure class="mm-frame">
+          <img src="assets/monster-munch/monster-munch-puff-dieline.jpg" alt="MONSTER MUNCH Puff Flavour Packaging Dieline" class="mm-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 5. GLOOP DIELINE -->
+      <section class="exhibit">
+        <header class="exhibit-header">
+          <div class="exhibit-title-wrap">
+            <span class="exhibit-num">[ 03 ]</span>
+            <h2 class="exhibit-title">GLOOP — FLAVOUR PACKAGING & DIELINE</h2>
+          </div>
+          <span class="exhibit-note">SOUR CREAM & ONION // TANGY PROFILE</span>
+        </header>
+        <p class="exhibit-caption">GLOOP channels tangy, zesty energy through vibrant slime-green hues, quirky character expressions, and playful typographic callouts engineered for instant consumer delight.</p>
+        <figure class="mm-frame">
+          <img src="assets/monster-munch/monster-munch-gloop-dieline.jpg" alt="MONSTER MUNCH Gloop Flavour Packaging Dieline" class="mm-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 6. CRUNCH DIELINE -->
+      <section class="exhibit">
+        <header class="exhibit-header">
+          <div class="exhibit-title-wrap">
+            <span class="exhibit-num">[ 04 ]</span>
+            <h2 class="exhibit-title">CRUNCH — FLAVOUR PACKAGING & DIELINE</h2>
+          </div>
+          <span class="exhibit-note">SPICY CHILLI // HIGH-IMPACT HEAT</span>
+        </header>
+        <p class="exhibit-caption">CRUNCH delivers explosive heat with intense crimson accents, sharp jagged tooth motifs, and punchy packaging geometry built to command attention in retail snack aisles.</p>
+        <figure class="mm-frame">
+          <img src="assets/monster-munch/monster-munch-crunch-dieline.jpg" alt="MONSTER MUNCH Crunch Flavour Packaging Dieline" class="mm-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 7. FINAL APPLICATION & PACKAGING REALISATION -->
+      <section class="exhibit">
+        <header class="exhibit-header">
+          <div class="exhibit-title-wrap">
+            <span class="exhibit-num">[ 05 ]</span>
+            <h2 class="exhibit-title">FINAL APPLICATION & RETAIL PAYOFF</h2>
+          </div>
+          <span class="exhibit-note">PRINTED BAG SPECIMEN // PHYSICAL REALISATION</span>
+        </header>
+        <p class="exhibit-caption">The complete printed snack bag application showcasing the high-gloss metallic substrate, vivid colour saturation, and tangible tactile shelf presence of the finished Monster Munch system.</p>
+        <figure class="mm-frame">
+          <img src="assets/monster-munch/monster-munch-final-bag.jpg" alt="MONSTER MUNCH Finished Snack Bag Retail Application" class="mm-img" loading="lazy">
+        </figure>
+      </section>
+
+    </div> <!-- /exhibits-flow -->
+
+    <!-- 8. CLOSING & PORTFOLIO NAVIGATION -->
+    <footer class="mm-footer">
+      <div class="footer-rule"></div>
+      <div class="footer-action-wrap">
+        <a href="index.html#work" class="back-btn-bottom">
+          <span aria-hidden="true">←</span>
+          <span>BACK TO SELECTED WORK</span>
+        </a>
+        <span class="footer-tag">PRANNY · VISUAL DESIGNER · 2026</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/view-scale.js"></script>
+</body>
+</html>

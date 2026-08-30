@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VÉLORA — Luxury Organic Packaging Case Study · Pranny</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0A0C0B;
+      --card-bg: #0E100F;
+      --text: #FFFFFF;
+      --text-muted: #8E8E93;
+      --gold: #C5A880;
+      --sand: #DFD5C6;
+      --olive: #7A8875;
+      --border: rgba(255, 255, 255, 0.12);
+      --font-display: "Syne", sans-serif;
+      --font-sans: "Plus Jakarta Sans", sans-serif;
+      --font-mono: "Space Mono", monospace;
+      --font-serif: "Instrument Serif", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Nav */
+    .velora-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px clamp(20px, 5vw, 64px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .nav-specimen {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Main Container */
+    .velora-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vh, 60px) clamp(20px, 5vw, 64px) 120px;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(48px, 7vh, 84px);
+    }
+
+    /* Opening Hero */
+    .velora-hero {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(24px, 3.5vh, 36px);
+      width: 100%;
+    }
+
+    .velora-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .velora-kicker {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .velora-tag {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    .velora-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .velora-num {
+      font-family: var(--font-mono);
+      font-size: clamp(14px, 1.6vw, 20px);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .velora-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 100px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.9;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .velora-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.5vw, 20px);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .velora-category {
+      font-family: var(--font-mono);
+      font-size: clamp(10.5px, 1.05vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Cover Frame */
+    .velora-frame {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+      position: relative;
+    }
+
+    .velora-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Editorial Brief Grid */
+    .brief-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(16px, 2vw, 24px);
+      width: 100%;
+    }
+
+    .brief-card {
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: clamp(22px, 3vh, 32px) clamp(20px, 2.5vw, 28px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .brief-num {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .brief-title {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.6vw, 22px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .brief-text {
+      font-size: clamp(13px, 1.05vw, 15px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .d-tag {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: #000000;
+      background-color: var(--gold);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+
+    /* Exhibits Flow */
+    .exhibits-flow {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(56px, 8.5vh, 92px);
+      width: 100%;
+    }
+
+    .exhibit {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .exhibit-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .exhibit-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .exhibit-num {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+    }
+
+    .exhibit-title {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.4vw, 18px);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .exhibit-note {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .exhibit-caption {
+      font-size: clamp(13px, 1.05vw, 15px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 820px;
+      margin-top: -4px;
+    }
+
+    /* Closing Block */
+    .closing-block {
+      background: linear-gradient(145deg, rgba(197, 168, 128, 0.1), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: clamp(36px, 5vh, 60px) clamp(24px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .closing-motto {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .closing-desc {
+      font-size: clamp(14px, 1.15vw, 16.5px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+    }
+
+    /* Footer */
+    .velora-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 24px;
+      width: 100%;
+    }
+
+    .footer-rule {
+      width: 100%;
+      height: 1px;
+      background-color: var(--border);
+    }
+
+    .footer-action-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-btn-bottom {
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #FFFFFF;
+      border-radius: 4px;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-btn-bottom:hover {
+      background-color: transparent;
+      color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .footer-tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .brief-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-action-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/view-scale.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class=velora-nav aria-label="Case Study Navigation">
+    <a href="index.html#work" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span>BACK TO WORK</span>
+    </a>
+    <span class="nav-specimen">PROJECT 02 // VÉLORA</span>
+  </nav>
+
+  <main class=velora-container>
+
+    <!-- 1. OPENING HERO -->
+    <header class=velora-hero>
+      <div class=velora-hero-meta>
+        <span class=velora-kicker>[ CASE STUDY 02 ]</span>
+        <span class=velora-tag>LUXURY PACKAGING</span>
+      </div>
+
+      <div class=velora-title-group>
+        <span class=velora-num>02</span>
+        <h1 class=velora-title>VÉLORA</h1>
+        <p class=velora-subheading>ORGANIC LUXURY PACKAGING & IDENTITY</p>
+        <p class=velora-category>Botanical Skincare · Structural Packaging · Material Design System</p>
+      </div>
+
+      <!-- Hero Visual (velora-hero.jpg) -->
+      <figure class=velora-frame>
+        <img src="assets/velora/velora-hero.jpg" alt="VÉLORA Luxury Packaging Hero Specimen" class="velora-img" loading="eager">
+      </figure>
+    </header>
+
+    <!-- EDITORIAL BRIEF & OBJECTIVES GRID -->
+    <section class=brief-grid aria-label="Design Brief and Project Objectives">
+      <div class=brief-card>
+        <span class=brief-num>01 // THE IDEA</span>
+        <h3 class=brief-title>ORGANIC LUXURY & TACTILE FORM</h3>
+        <p class=brief-text>VÉLORA is a botanical luxury skincare line dedicated to bringing restorative rituals into everyday life through pure, natural ingredients and thoughtful structural form.</p>
+      </div>
+
+      <div class=brief-card>
+        <span class=brief-num>02 // THE CHALLENGE</span>
+        <h3 class=brief-title>TIMELESS REFINEMENT</h3>
+        <p class=brief-text>Design an understated luxury packaging identity that communicates scientific botanical efficacy without resorting to cold, predictable clinical aesthetics.</p>
+      </div>
+
+      <div class=brief-card>
+        <span class=brief-num>03 // THE OBJECTIVE</span>
+        <h3 class=brief-title>TACTILE MATERIAL HARMONY</h3>
+        <p class=brief-text>Craft a cohesive multi-format packaging suite championing sustainable raw paper stocks, bespoke frosted vessel silhouettes, and subtle debossed detailing.</p>
+      </div>
+
+      <div class=brief-card>
+        <span class=brief-num>04 // CREATIVE DIRECTION</span>
+        <div class=tags-wrap>
+          <span class=d-tag>WARM</span>
+          <span class=d-tag>EARTHY</span>
+          <span class=d-tag>REFINED</span>
+          <span class=d-tag>LUXURIOUS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 DESIGNED CASE STUDY EXHIBITS (01 to 06) -->
+    <div class=exhibits-flow>
+
+      <!-- 2. PRODUCT / PACKAGING DETAILS -->
+      <section class=exhibit>
+        <header class=exhibit-header>
+          <div class=exhibit-title-wrap>
+            <span class=exhibit-num>[ 01 ]</span>
+            <h2 class=exhibit-title>PRODUCT & PACKAGING DETAILS</h2>
+          </div>
+          <span class=exhibit-note>MATERIALITY & EMBOSSED FINISHES</span>
+        </header>
+        <p class=exhibit-caption>Detailed tactile exploration highlighting the minimalist typography hierarchy, blind-debossed logos, and matte-coated paper substrates designed for a serene unboxing experience.</p>
+        <figure class=velora-frame>
+          <img src="assets/velora/velora-packaging-details.jpg" alt="VÉLORA Product Packaging Details" class="velora-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 3. CONCEPT & DESIGN THINKING -->
+      <section class=exhibit>
+        <header class=exhibit-header>
+          <div class=exhibit-title-wrap>
+            <span class=exhibit-num>[ 02 ]</span>
+            <h2 class=exhibit-title>CONCEPT & DESIGN THINKING</h2>
+          </div>
+          <span class=exhibit-note>NATURAL FORMS & ORGANIC CURVES</span>
+        </header>
+        <p class=exhibit-caption>The visual foundation draws directly from organic curves, earthy warmth, and stone-like tactile textures, anchoring the brand in natural harmony and understated modern opulence.</p>
+        <figure class=velora-frame>
+          <img src="assets/velora/velora-concept.jpg" alt="VÉLORA Concept and Design Thinking" class="velora-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 4. BRAND EXPERIENCE & VESSEL SILHOUETTES -->
+      <section class=exhibit>
+        <header class=exhibit-header>
+          <div class=exhibit-title-wrap>
+            <span class=exhibit-num>[ 03 ]</span>
+            <h2 class=exhibit-title>BRAND EXPERIENCE & FORM</h2>
+          </div>
+          <span class=exhibit-note>HOLISTIC VESSEL ARCHITECTURE</span>
+        </header>
+        <p class=exhibit-caption>Balancing organic textures with crisp architectural silhouettes across the primary product suite, delivering an elevated ritual for daily restoration.</p>
+        <figure class=velora-frame>
+          <img src="assets/velora/velora-product-packaging.jpg" alt="VÉLORA Brand Experience Product Packaging" class="velora-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 5. CREAM / PACKAGING -->
+      <section class=exhibit>
+        <header class=exhibit-header>
+          <div class=exhibit-title-wrap>
+            <span class=exhibit-num>[ 04 ]</span>
+            <h2 class=exhibit-title>CREAM VESSEL & TYPOGRAPHY</h2>
+          </div>
+          <span class=exhibit-note>STRUCTURAL REFINEMENT</span>
+        </header>
+        <p class=exhibit-caption>Heavy-walled custom ceramic jars paired with weighted caps, engineered with precise typographic alignment for enduring tactile value.</p>
+        <figure class=velora-frame>
+          <img src="assets/velora/velora-cream-packaging.jpg" alt="VÉLORA Cream Packaging Study" class="velora-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 6. PACKAGING SYSTEM & STRUCTURAL STUDY -->
+      <section class=exhibit>
+        <header class=exhibit-header>
+          <div class=exhibit-title-wrap>
+            <span class=exhibit-num>[ 05 ]</span>
+            <h2 class=exhibit-title>PACKAGING SYSTEM & DIELINES</h2>
+          </div>
+          <span class=exhibit-note>SYSTEM PROPORTIONS & GRID</span>
+        </header>
+        <p class=exhibit-caption>A systematic packaging dieline framework that scales effortlessly across serums, creams, and botanical oils while maintaining unified proportions and typographic cadence.</p>
+        <figure class=velora-frame>
+          <img src="assets/velora/velora-packaging-study.jpg" alt="VÉLORA Packaging System and Dieline Study" class="velora-img" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- 7. FINAL APPLICATION & RETAIL EXPERIENCE -->
+      <section class=exhibit>
+        <header class=exhibit-header>
+          <div class=exhibit-title-wrap>
+            <span class=exhibit-num>[ 06 ]</span>
+            <h2 class=exhibit-title>RETAIL APPLICATION & CARRY GOODS</h2>
+          </div>
+          <span class=exhibit-note>SUSTAINABLE PHYSICAL TOUCHPOINTS</span>
+        </header>
+        <p class=exhibit-caption>Custom raw kraft carrier bags accented with woven cotton ribbon handles and minimalist blind-debossed brand crests for a complete luxury retail experience.</p>
+        <figure class=velora-frame>
+          <img src="assets/velora/velora-paper-bags.jpg" alt="VÉLORA Retail Application and Paper Carry Bags" class="velora-img" loading="lazy">
+        </figure>
+      </section>
+
+    </div> <!-- /exhibits-flow -->
+
+    <!-- CLOSING QUOTE -->
+    <div class="closing-block">
+      <h3 class="closing-motto">“Beauty, distilled to its essentials.”</h3>
+      <p class="closing-desc">A study in refined skincare branding, sculptural packaging and tactile visual direction.</p>
+    </div>
+
+    <!-- 8. CLOSING & PORTFOLIO NAVIGATION -->
+    <footer class=velora-footer>
+      <div class=footer-rule></div>
+      <div class=footer-action-wrap>
+        <a href="index.html#work" class="back-btn-bottom">
+          <span aria-hidden="true">←</span>
+          <span>BACK TO SELECTED WORK</span>
+        </a>
+        <span class="footer-tag">PRANNY · VISUAL DESIGNER · 2026</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/view-scale.js"></script>
+</body>
+</html>

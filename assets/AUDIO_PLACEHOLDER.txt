@@ -1,0 +1,2 @@
+Place your nature ambience audio file (e.g. nature.mp3, birds.mp3, forest-ambient.mp3) here in the assets/ directory.
+The website's audio engine will automatically detect and play it seamlessly upon user interaction.

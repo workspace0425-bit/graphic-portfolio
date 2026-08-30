@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOFFEE — Social Media & Brand Content Case Study · Pranny</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0A0C0B;
+      --card-bg: #0E100F;
+      --text: #FFFFFF;
+      --text-muted: #8E8E93;
+      --burgundy: #A33343;
+      --burgundy-dark: #661823;
+      --cream: #F4ECE1;
+      --coffee: #C99A6B;
+      --border: rgba(255, 255, 255, 0.12);
+      --font-display: "Syne", sans-serif;
+      --font-sans: "Plus Jakarta Sans", sans-serif;
+      --font-mono: "Space Mono", monospace;
+      --font-serif: "Instrument Serif", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Nav */
+    .moffee-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px clamp(20px, 5vw, 64px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .nav-specimen {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Main Container */
+    .moffee-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vh, 60px) clamp(20px, 5vw, 64px) 120px;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(52px, 8vh, 92px);
+    }
+
+    /* Opening Hero */
+    .moffee-hero {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(24px, 3.5vh, 36px);
+      width: 100%;
+    }
+
+    .moffee-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .moffee-kicker {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--burgundy);
+      text-transform: uppercase;
+    }
+
+    .moffee-tag {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    .moffee-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .moffee-num {
+      font-family: var(--font-mono);
+      font-size: clamp(14px, 1.6vw, 20px);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .moffee-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 100px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.9;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .moffee-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.5vw, 20px);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--burgundy);
+      text-transform: uppercase;
+    }
+
+    .moffee-category {
+      font-family: var(--font-mono);
+      font-size: clamp(10.5px, 1.05vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Editorial Brief Box */
+    .brief-intro-box {
+      background: linear-gradient(145deg, rgba(163, 51, 67, 0.08), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-left: 3px solid var(--burgundy);
+      border-radius: 6px;
+      padding: clamp(24px, 3vh, 36px) clamp(22px, 3vw, 36px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .brief-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--burgundy);
+      text-transform: uppercase;
+    }
+
+    .brief-lead {
+      font-size: clamp(15px, 1.25vw, 18px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Frames & Images */
+    .moffee-frame {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+      position: relative;
+    }
+
+    .moffee-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Section Layout */
+    .section-header-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 14px;
+      width: 100%;
+    }
+
+    .section-kicker {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--burgundy);
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.8vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      font-size: clamp(13.5px, 1.1vw, 16px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 840px;
+    }
+
+    /* System Feature Grid */
+    .system-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    .feature-card {
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .feature-num {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--burgundy);
+    }
+
+    .feature-name {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .feature-desc {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Posts Flow (9 Individual Curated Executions) */
+    .posts-stream {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(64px, 9vh, 108px);
+      width: 100%;
+    }
+
+    .post-item {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .post-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .post-num {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--burgundy);
+    }
+
+    .post-title {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.4vw, 19px);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .post-type-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .post-meta-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: clamp(16px, 2.5vw, 32px);
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: clamp(18px, 2.5vh, 26px) clamp(20px, 2.5vw, 28px);
+    }
+
+    .post-desc-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--burgundy);
+      text-transform: uppercase;
+    }
+
+    .post-desc {
+      font-size: clamp(13.5px, 1.05vw, 15px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .post-takeaway-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      padding-left: clamp(16px, 2vw, 24px);
+    }
+
+    .post-takeaway {
+      font-family: var(--font-mono);
+      font-size: clamp(12px, 0.95vw, 13.5px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: #FFFFFF;
+    }
+
+    .post-takeaway strong {
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* Language & Adaptability Grid */
+    .narrative-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(20px, 2.5vw, 32px);
+      width: 100%;
+    }
+
+    .narrative-card {
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: clamp(24px, 3.5vh, 36px) clamp(22px, 3vw, 32px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .narrative-card-header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .narrative-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--burgundy);
+      text-transform: uppercase;
+    }
+
+    .narrative-title {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 1.8vw, 24px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .narrative-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .narrative-list li {
+      font-size: clamp(13px, 1.05vw, 14.5px);
+      color: rgba(255, 255, 255, 0.78);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .narrative-list li::before {
+      content: "+";
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+
+    /* Closing Statement Block */
+    .closing-block {
+      background: linear-gradient(145deg, rgba(163, 51, 67, 0.12), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: clamp(36px, 5vh, 60px) clamp(24px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .closing-motto {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .closing-desc {
+      font-size: clamp(14px, 1.15vw, 16.5px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+    }
+
+    /* Footer */
+    .moffee-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 12px;
+      width: 100%;
+    }
+
+    .footer-rule {
+      width: 100%;
+      height: 1px;
+      background-color: var(--border);
+    }
+
+    .footer-action-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-btn-bottom {
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #FFFFFF;
+      border-radius: 4px;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-btn-bottom:hover {
+      background-color: transparent;
+      color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .footer-tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 860px) {
+      .system-features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .post-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .post-takeaway-wrap {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 0;
+        padding-top: 14px;
+      }
+
+      .narrative-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-action-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/view-scale.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="moffee-nav" aria-label="Case Study Navigation">
+    <a href="index.html#work" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span>BACK TO WORK</span>
+    </a>
+    <span class="nav-specimen">PROJECT 05 // MOFFEE</span>
+  </nav>
+
+  <main class="moffee-container">
+
+    <!-- HERO SECTION -->
+    <header class="moffee-hero">
+      <div class="moffee-hero-meta">
+        <span class="moffee-kicker">[ CASE STUDY 05 ]</span>
+        <span class="moffee-tag">SOCIAL MEDIA & BRAND CONTENT</span>
+      </div>
+
+      <div class="moffee-title-group">
+        <span class="moffee-num">05</span>
+        <h1 class="moffee-title">MOFFEE</h1>
+        <p class="moffee-subheading">SOCIAL MEDIA & BRAND CONTENT DESIGN</p>
+        <p class="moffee-category">Visual Identity · Social-First Art Direction · Multi-Format Content System</p>
+      </div>
+
+      <!-- Hero Introduction Brief -->
+      <div class="brief-intro-box">
+        <span class="brief-kicker">PROJECT PREMISE</span>
+        <p class="brief-lead">An in-depth exploration of a cohesive social media identity for a modern coffee brand — orchestrating warm neutral photography, refined typography, product storytelling, and everyday lifestyle content into a unified visual world.</p>
+      </div>
+
+      <!-- Hero Visual (01-packaging-campaign.jpg) -->
+      <figure class="moffee-frame">
+        <img src="assets/moffee/01-packaging-campaign.jpg" alt="MOFFEE Brand Identity and Packaging Campaign Visual" class="moffee-img" loading="eager">
+      </figure>
+    </header>
+
+    <!-- 01 — THE SOCIAL SYSTEM -->
+    <section class="moffee-section">
+      <div class="section-header-wrap">
+        <span class="section-kicker">01 // ECOSYSTEM</span>
+        <h2 class="section-title">THE SOCIAL SYSTEM</h2>
+        <p class="section-subtitle">The complete Instagram profile and feed architecture engineered to establish immediate brand recognition, rhythmic grid balance, and seamless visual continuity across diverse post types.</p>
+      </div>
+
+      <!-- Large Prominent Social Mockup -->
+      <figure class="moffee-frame" style="margin-top: 24px;">
+        <img src="assets/moffee/00-moffee-full-social-mockup.jpg" alt="MOFFEE Complete Social Media Feed and Profile Mockup System" class="moffee-img" loading="lazy">
+      </figure>
+
+      <!-- System Breakdown Cards -->
+      <div class="system-features-grid">
+        <div class="feature-card">
+          <span class="feature-num">01</span>
+          <h4 class="feature-name">PROFILE IDENTITY</h4>
+          <p class="feature-desc">Consistent icon mark, editorial bio structure, and unified tone of voice from the first touchpoint.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-num">02</span>
+          <h4 class="feature-name">FEED CONSISTENCY</h4>
+          <p class="feature-desc">Carefully paced alternation between bold packaging, lifestyle moments, and quiet product focus.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-num">03</span>
+          <h4 class="feature-name">VISUAL HIERARCHY</h4>
+          <p class="feature-desc">Distinct scale, purposeful typography framing, and strong focal anchors across square assets.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-num">04</span>
+          <h4 class="feature-name">RECURRING TYPOGRAPHY</h4>
+          <p class="feature-desc">Structured grotesques paired with restrained serif accents for an elevated specialty coffee feel.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-num">05</span>
+          <h4 class="feature-name">COLOUR SYSTEM</h4>
+          <p class="feature-desc">Deep burgundy, warm cream, roasted coffee tones, and warm organic neutrals across every scene.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-num">06</span>
+          <h4 class="feature-name">MULTI-FORMAT PRESENCE</h4>
+          <p class="feature-desc">Adaptive executions spanning packaging reveals, community storytelling, and promotional campaigns.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — CONTENT EXPLORATION (9 Individual Executions) -->
+    <section class="moffee-section">
+      <div class="section-header-wrap">
+        <span class="section-kicker">02 // EXECUTIONS</span>
+        <h2 class="section-title">CONTENT EXPLORATION</h2>
+        <p class="section-subtitle">Nine distinct content formats within the same visual identity — showcasing how a unified design language flexing across packaging, lifestyle, campaign, minimal, and community storytelling.</p>
+      </div>
+
+      <div class="posts-stream" style="margin-top: 32px;">
+
+        <!-- POST 01 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">01</span>
+              <h3 class="post-title">PRODUCT + PACKAGING</h3>
+            </div>
+            <span class="post-type-tag">PRODUCT + PACKAGING SOCIAL POST</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/01-packaging-campaign.jpg" alt="MOFFEE Product and Packaging Social Post" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A product-focused composition combining packaging, food and beverage elements to communicate the brand experience beyond the coffee itself.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to translate packaging and brand identity into social-first content.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 02 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">02</span>
+              <h3 class="post-title">BRAND LIFESTYLE</h3>
+            </div>
+            <span class="post-type-tag">BRAND LIFESTYLE CONTENT</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/02-tote-brand-lifestyle.jpg" alt="MOFFEE Brand Lifestyle Social Post" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A lifestyle-led visual showing the brand existing naturally within an everyday environment.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to build brand presence through lifestyle art direction.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 03 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">03</span>
+              <h3 class="post-title">PRODUCT FOCUS</h3>
+            </div>
+            <span class="post-type-tag">PRODUCT / BRAND FOCUS POST</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/03-tote-lifestyle.jpg" alt="MOFFEE Product and Brand Focus Post" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A clean product-led composition that gives the brand identity and physical product equal visual importance.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to create product-focused social content without losing brand personality.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 04 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">04</span>
+              <h3 class="post-title">CAMPAIGN / PROMOTIONAL</h3>
+            </div>
+            <span class="post-type-tag">CAMPAIGN / PROMOTIONAL SOCIAL POST</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/04-promotional-product.jpg" alt="MOFFEE Campaign and Promotional Social Post" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A campaign-style composition using bold typography, product imagery and a clear message designed to capture attention quickly.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to create promotional content with strong visual hierarchy.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 05 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">05</span>
+              <h3 class="post-title">MINIMAL PRODUCT</h3>
+            </div>
+            <span class="post-type-tag">MINIMAL PRODUCT PHOTOGRAPHY / SOCIAL POST</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/05-coffee-cup-stack.jpg" alt="MOFFEE Minimal Product Photography Social Post" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A restrained composition using product, negative space and subtle typography to create a quieter brand moment.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to adapt the same identity to minimal visual communication.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 06 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">06</span>
+              <h3 class="post-title">EVERYDAY LIFESTYLE</h3>
+            </div>
+            <span class="post-type-tag">LIFESTYLE / EVERYDAY CONTENT</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/06-product-lifestyle.jpg" alt="MOFFEE Everyday Lifestyle Social Post" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A coffee moment positioned within an everyday workspace, connecting the product to the audience's daily routine.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to create relatable lifestyle content while maintaining brand consistency.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 07 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">07</span>
+              <h3 class="post-title">BRAND MESSAGE</h3>
+            </div>
+            <span class="post-type-tag">BRAND MESSAGE / EDITORIAL SOCIAL POST</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/07-vending-product-concept.jpg" alt="MOFFEE Brand Message Editorial Social Post" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A simple, thoughtful composition where the message and atmosphere carry the visual.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to use social content for brand storytelling rather than only product promotion.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 08 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">08</span>
+              <h3 class="post-title">CREATIVE CONCEPT</h3>
+            </div>
+            <span class="post-type-tag">CREATIVE CONCEPT / EXPERIMENTAL CONTENT</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/08-workspace-lifestyle.jpg" alt="MOFFEE Creative Concept Social Content" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A more conceptual visual that pushes the coffee brand into a playful and unexpected product context.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to experiment with ideas while keeping the brand recognisable.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 09 -->
+        <article class="post-item">
+          <header class="post-header">
+            <div class="post-title-wrap">
+              <span class="post-num">09</span>
+              <h3 class="post-title">COMMUNITY / LIFESTYLE</h3>
+            </div>
+            <span class="post-type-tag">COMMUNITY / LIFESTYLE BRAND CONTENT</span>
+          </header>
+
+          <figure class="moffee-frame">
+            <img src="assets/moffee/09-final-coffee-lifestyle.jpg" alt="MOFFEE Community and Lifestyle Brand Content" class="moffee-img" loading="lazy">
+          </figure>
+
+          <div class="post-meta-grid">
+            <div class="post-desc-wrap">
+              <span class="meta-label">CONTENT ROLE</span>
+              <p class="post-desc">A human, lifestyle-focused visual that positions the brand as part of everyday life.</p>
+            </div>
+            <div class="post-takeaway-wrap">
+              <span class="meta-label">CAPABILITY</span>
+              <p class="post-takeaway"><strong>Demonstrates:</strong> Ability to create warm, relatable content that extends beyond direct product selling.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 03 & 04 — VISUAL LANGUAGE & ADAPTABILITY NARRATIVE -->
+    <section class="narrative-grid">
+      <!-- 03 — THE VISUAL LANGUAGE -->
+      <div class="narrative-card">
+        <div class="narrative-card-header">
+          <span class="narrative-kicker">03 // DESIGN PILLARS</span>
+          <h3 class="narrative-title">THE VISUAL LANGUAGE</h3>
+        </div>
+        <p style="font-size: 13.5px; line-height: 1.6; color: rgba(255, 255, 255, 0.78);">A unified visual framework uniting diverse post executions into one unmistakable aesthetic:</p>
+        <ul class="narrative-list">
+          <li>Warm neutral & natural-light photography</li>
+          <li>Rich signature burgundy & cream palette</li>
+          <li>Restrained typographic scale & clean alignments</li>
+          <li>Editorial composition with generous whitespace</li>
+          <li>Relatable, authentic everyday lifestyle imagery</li>
+          <li>Recurring brand phrases & consistent logo placement</li>
+        </ul>
+        <p style="font-family: var(--font-mono); font-size: 12px; color: var(--burgundy); font-weight: 700; text-transform: uppercase; margin-top: 6px;">Different content types, one recognisable brand language.</p>
+      </div>
+
+      <!-- 04 — ADAPTABILITY & CONTENT STRATEGY -->
+      <div class="narrative-card">
+        <div class="narrative-card-header">
+          <span class="narrative-kicker">04 // MULTI-FORMAT STRATEGY</span>
+          <h3 class="narrative-title">CONTENT ADAPTABILITY</h3>
+        </div>
+        <p style="font-size: 13.5px; line-height: 1.6; color: rgba(255, 255, 255, 0.78);">Demonstrating the capacity to fluidly adapt a single brand identity across multiple digital storytelling formats:</p>
+        <ul class="narrative-list">
+          <li>Product Hero & Packaging reveals</li>
+          <li>High-conversion promotional campaigns</li>
+          <li>Everyday workspace lifestyle integration</li>
+          <li>Restrained minimal art moments</li>
+          <li>Community-focused brand storytelling</li>
+          <li>Playful conceptual & experimental imagery</li>
+        </ul>
+        <p style="font-family: var(--font-mono); font-size: 12px; color: var(--burgundy); font-weight: 700; text-transform: uppercase; margin-top: 6px;">Built for social engagement without brand dilution.</p>
+      </div>
+    </section>
+
+    <!-- CLOSING STATEMENT -->
+    <div class="closing-block">
+      <h3 class="closing-motto">“SAME BEANS. DIFFERENT STORIES.”</h3>
+      <p class="closing-desc">From tactile packaging close-ups to quiet morning routines and high-energy promotional campaigns, MOFFEE exemplifies how a robust visual system sustains endless narrative variation while reinforcing brand loyalty.</p>
+    </div>
+
+    <!-- CLOSING & PORTFOLIO NAVIGATION -->
+    <footer class="moffee-footer">
+      <div class="footer-rule"></div>
+      <div class="footer-action-wrap">
+        <a href="index.html#work" class="back-btn-bottom">
+          <span aria-hidden="true">←</span>
+          <span>BACK TO SELECTED WORK</span>
+        </a>
+        <span class="footer-tag">PRANNY · VISUAL DESIGNER · 2026</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/view-scale.js"></script>
+</body>
+</html>

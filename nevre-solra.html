@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOCIAL CONTENT DESIGN — NÉVRE + SOLRA · Pranny</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0A0C0B;
+      --card-bg: #0E100F;
+      --text: #FFFFFF;
+      --text-muted: #8E8E93;
+      --nevre-accent: #E2E2E2;
+      --solra-blue: #00A6FF;
+      --solra-azure: #0077CC;
+      --solra-bg: #0C1A29;
+      --border: rgba(255, 255, 255, 0.12);
+      --font-display: "Syne", sans-serif;
+      --font-sans: "Plus Jakarta Sans", sans-serif;
+      --font-mono: "Space Mono", monospace;
+      --font-serif: "Instrument Serif", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Nav */
+    .ns-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px clamp(20px, 5vw, 64px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .nav-specimen {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Main Container */
+    .ns-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vh, 60px) clamp(20px, 5vw, 64px) 120px;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(64px, 9vh, 108px);
+    }
+
+    /* Opening Hero */
+    .ns-hero {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(24px, 3.5vh, 36px);
+      width: 100%;
+    }
+
+    .ns-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .ns-kicker {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .ns-tag {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    .ns-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ns-num {
+      font-family: var(--font-mono);
+      font-size: clamp(14px, 1.6vw, 20px);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .ns-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6.5vw, 84px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.92;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .ns-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.5vw, 20px);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.85);
+      text-transform: uppercase;
+    }
+
+    .ns-category {
+      font-family: var(--font-mono);
+      font-size: clamp(10.5px, 1.05vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Purpose Statement Box */
+    .premise-box {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-left: 3px solid #FFFFFF;
+      border-radius: 6px;
+      padding: clamp(22px, 3vh, 32px) clamp(20px, 3vw, 32px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .premise-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .premise-text {
+      font-size: clamp(14.5px, 1.2vw, 17.5px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    /* Frame Styling */
+    .ns-frame {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .ns-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Section Headers */
+    .brand-section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      width: 100%;
+    }
+
+    .brand-kicker-nevre {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--nevre-accent);
+      text-transform: uppercase;
+    }
+
+    .brand-kicker-solra {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--solra-blue);
+      text-transform: uppercase;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .brand-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(13px, 1.3vw, 16.5px);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .sub-nevre {
+      color: var(--nevre-accent);
+    }
+
+    .sub-solra {
+      color: var(--solra-blue);
+    }
+
+    /* Editorial Meta Grid */
+    .editorial-meta-card {
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: clamp(24px, 3vh, 32px) clamp(22px, 3vw, 32px);
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: clamp(20px, 3vw, 36px);
+      width: 100%;
+    }
+
+    .meta-content-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .meta-body-text {
+      font-size: clamp(13.5px, 1.05vw, 15px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .principles-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .principles-list li {
+      font-size: clamp(12.5px, 1vw, 14px);
+      color: rgba(255, 255, 255, 0.75);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .principles-list li::before {
+      content: "+";
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .meta-takeaway-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      padding-left: clamp(20px, 2.5vw, 32px);
+      justify-content: center;
+    }
+
+    .takeaway-statement {
+      font-family: var(--font-mono);
+      font-size: clamp(12.5px, 1vw, 14.5px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: #FFFFFF;
+    }
+
+    .takeaway-statement strong {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* Solra Carousel Showcase Grid (2-Col + Centered 5th Slide) */
+    .carousel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(18px, 2.5vw, 32px);
+      width: 100%;
+      margin-top: 28px;
+    }
+
+    .carousel-slide-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .carousel-slide-item.slide-center {
+      grid-column: 1 / -1;
+      max-width: calc(50% - clamp(9px, 1.25vw, 16px));
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .slide-indicator-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0, 166, 255, 0.2);
+    }
+
+    .slide-badge {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--solra-blue);
+    }
+
+    .slide-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Format Comparison Table / Grid */
+    .format-comparison-section {
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: clamp(28px, 4vh, 44px) clamp(22px, 3.5vw, 36px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .comparison-header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 14px;
+    }
+
+    .comparison-title {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(20px, 3vw, 36px);
+    }
+
+    .comp-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 20px 22px;
+    }
+
+    .comp-col-nevre {
+      border-top: 3px solid var(--nevre-accent);
+    }
+
+    .comp-col-solra {
+      border-top: 3px solid var(--solra-blue);
+    }
+
+    .comp-brand-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .comp-format-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: -6px;
+    }
+
+    .comp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .comp-list li {
+      font-size: clamp(12.5px, 0.95vw, 13.5px);
+      color: rgba(255, 255, 255, 0.78);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .comp-list li::before {
+      content: "→";
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    /* Final Adaptability Statement */
+    .closing-block {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 166, 255, 0.04));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: clamp(36px, 5vh, 60px) clamp(24px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .closing-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.2vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .closing-body-text {
+      font-size: clamp(14px, 1.1vw, 16.5px);
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 840px;
+    }
+
+    .closing-pillars-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .closing-pill {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #FFFFFF;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 6px 14px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    /* Footer */
+    .ns-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 12px;
+      width: 100%;
+    }
+
+    .footer-rule {
+      width: 100%;
+      height: 1px;
+      background-color: var(--border);
+    }
+
+    .footer-action-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-btn-bottom {
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #FFFFFF;
+      border-radius: 4px;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-btn-bottom:hover {
+      background-color: transparent;
+      color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .footer-tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 860px) {
+      .editorial-meta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .meta-takeaway-col {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 0;
+        padding-top: 16px;
+      }
+
+      .carousel-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .carousel-slide-item.slide-center {
+        grid-column: auto;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-action-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/view-scale.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="ns-nav" aria-label="Case Study Navigation">
+    <a href="index.html#work" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span>BACK TO WORK</span>
+    </a>
+    <span class="nav-specimen">PROJECT 06 // NÉVRE + SOLRA</span>
+  </nav>
+
+  <main class="ns-container">
+
+    <!-- OPENING PAGE INTRODUCTION -->
+    <header class="ns-hero">
+      <div class="ns-hero-meta">
+        <span class="ns-kicker">[ CASE STUDY 06 ]</span>
+        <span class="ns-tag">SOCIAL CONTENT DESIGN</span>
+      </div>
+
+      <div class="ns-title-group">
+        <span class="ns-num">06</span>
+        <h1 class="ns-title">SOCIAL CONTENT DESIGN</h1>
+        <p class="ns-subheading">STORIES + CAROUSEL</p>
+        <p class="ns-category">Format Adaptability · Story Sequencing · Multi-Slide Feed Narrative</p>
+      </div>
+
+      <!-- Premise Box -->
+      <div class="premise-box">
+        <span class="premise-kicker">CURATORIAL PREMISE</span>
+        <p class="premise-text">This project demonstrates the ability to design for fundamentally different social media formats — adapting visual communication, layout cadence, and storytelling strategies according to the specific platform mechanics and distinct brand identities of NÉVRE and SOLRA.</p>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         01 — NÉVRE: INSTAGRAM STORY DESIGN
+         ========================================================= -->
+    <section class="brand-block-nevre" id="nevre-section">
+      <header class="brand-section-header">
+        <span class="brand-kicker-nevre">01 // BRAND ONE · FASHION & EDITORIAL</span>
+        <h2 class="brand-title">NÉVRE</h2>
+        <p class="brand-subheading sub-nevre">INSTAGRAM STORY DESIGN</p>
+      </header>
+
+      <!-- Large Prominent NÉVRE Mockup -->
+      <figure class="ns-frame" style="margin-top: 24px;">
+        <img src="assets/nevre-solra/01-nevre-stories-mockup.jpg" alt="NÉVRE Instagram Story Sequence Phone Mockup Presentation" class="ns-img" loading="eager">
+      </figure>
+
+      <!-- NÉVRE Editorial Principles & Takeaway -->
+      <div class="editorial-meta-card" style="margin-top: 24px;">
+        <div class="meta-content-col">
+          <span class="meta-label">DESIGN APPROACH & PRINCIPLES</span>
+          <p class="meta-body-text">Designing a connected Story sequence rather than treating each frame as an isolated graphic. Built with a sleek, monochromatic editorial sensibility tailored for quick vertical consumption.</p>
+          <ul class="principles-list">
+            <li>Narrative story pacing from teaser to product reveal</li>
+            <li>Mobile-first composition with safe-zone UI awareness</li>
+            <li>Restrained high-contrast typography hierarchy</li>
+            <li>Intentional interactive sticker and swipe-up CTA placement</li>
+            <li>Seamless visual continuity across consecutive frames</li>
+          </ul>
+        </div>
+        <div class="meta-takeaway-col">
+          <span class="meta-label">CAPABILITY</span>
+          <p class="takeaway-statement"><strong>Demonstrates:</strong> Ability to create structured, narrative-driven Instagram Story content designed specifically for mobile viewing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         02 — SOLRA: INSTAGRAM CAROUSEL DESIGN
+         ========================================================= -->
+    <section class="brand-block-solra" id="solra-section">
+      <header class="brand-section-header">
+        <span class="brand-kicker-solra">02 // BRAND TWO · SKINCARE & SUNCARE</span>
+        <h2 class="brand-title">SOLRA</h2>
+        <p class="brand-subheading sub-solra">INSTAGRAM CAROUSEL DESIGN</p>
+      </header>
+
+      <!-- SOLRA Editorial Principles & Takeaway -->
+      <div class="editorial-meta-card" style="margin-top: 24px;">
+        <div class="meta-content-col">
+          <span class="meta-label">DESIGN APPROACH & PRINCIPLES</span>
+          <p class="meta-body-text">Engineered as a 5-slide educational and product showcase carousel designed for high retention and seamless swipe-through engagement across the main Instagram feed.</p>
+          <ul class="principles-list">
+            <li>Carousel storytelling with seamless visual rhythm across slides</li>
+            <li>Clear information hierarchy balancing product benefits and science</li>
+            <li>Vibrant electric azure and sun-drenched photography palette</li>
+            <li>Editorial layout tailored for square / 4:5 feed consumption</li>
+            <li>Progressive narrative momentum from slide 01 hook to slide 05 payoff</li>
+          </ul>
+        </div>
+        <div class="meta-takeaway-col">
+          <span class="meta-label">CAPABILITY</span>
+          <p class="takeaway-statement"><strong>Demonstrates:</strong> Ability to build a multi-slide narrative where each frame communicates independently while contributing to one larger story.</p>
+        </div>
+      </div>
+
+      <!-- 5-Slide Connected Carousel Grid (2-Col + Centered Row 3) -->
+      <div class="carousel-grid">
+
+        <!-- Slide 01 / 05 -->
+        <article class="carousel-slide-item">
+          <div class="slide-indicator-bar">
+            <span class="slide-badge">01 / 05 // COVER HOOK</span>
+            <span class="slide-meta">SUNCARE PRODUCT INTRODUCTION</span>
+          </div>
+          <figure class="ns-frame">
+            <img src="assets/nevre-solra/02-solra-carousel-01.jpg" alt="SOLRA Instagram Carousel Slide 01 of 05 - Cover Hook" class="ns-img" loading="lazy">
+          </figure>
+        </article>
+
+        <!-- Slide 02 / 05 -->
+        <article class="carousel-slide-item">
+          <div class="slide-indicator-bar">
+            <span class="slide-badge">02 / 05 // INGREDIENT SPOTLIGHT</span>
+            <span class="slide-meta">BOTANICAL UV DEFENCE</span>
+          </div>
+          <figure class="ns-frame">
+            <img src="assets/nevre-solra/03-solra-carousel-02.jpg" alt="SOLRA Instagram Carousel Slide 02 of 05 - Ingredient Spotlight" class="ns-img" loading="lazy">
+          </figure>
+        </article>
+
+        <!-- Slide 03 / 05 -->
+        <article class="carousel-slide-item">
+          <div class="slide-indicator-bar">
+            <span class="slide-badge">03 / 05 // TEXTURE & APPLICATION</span>
+            <span class="slide-meta">FEATHERLIGHT FORMULATION</span>
+          </div>
+          <figure class="ns-frame">
+            <img src="assets/nevre-solra/04-solra-carousel-03.jpg" alt="SOLRA Instagram Carousel Slide 03 of 05 - Texture and Application" class="ns-img" loading="lazy">
+          </figure>
+        </article>
+
+        <!-- Slide 04 / 05 -->
+        <article class="carousel-slide-item">
+          <div class="slide-indicator-bar">
+            <span class="slide-badge">04 / 05 // CLINICAL BENEFIT</span>
+            <span class="slide-meta">BARRIER REPAIR & HYDRATION</span>
+          </div>
+          <figure class="ns-frame">
+            <img src="assets/nevre-solra/05-solra-carousel-04.jpg" alt="SOLRA Instagram Carousel Slide 04 of 05 - Clinical Benefit" class="ns-img" loading="lazy">
+          </figure>
+        </article>
+
+        <!-- Slide 05 / 05 (Centered in Row 3) -->
+        <article class="carousel-slide-item slide-center">
+          <div class="slide-indicator-bar">
+            <span class="slide-badge">05 / 05 // CLOSING CTA & SUMMARY</span>
+            <span class="slide-meta">FINAL BRAND CALLOUT</span>
+          </div>
+          <figure class="ns-frame">
+            <img src="assets/nevre-solra/06-solra-carousel-05.jpg" alt="SOLRA Instagram Carousel Slide 05 of 05 - Closing CTA" class="ns-img" loading="lazy">
+          </figure>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FORMAT COMPARISON: STORIES VS CAROUSEL
+         ========================================================= -->
+    <section class="format-comparison-section">
+      <div class="comparison-header">
+        <span class="meta-label">FORMAT STRATEGY COMPARISON</span>
+        <h3 class="comparison-title">FORMAT-SPECIFIC DESIGN PRINCIPLES</h3>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- NEVRE Column -->
+        <div class="comp-col comp-col-nevre">
+          <h4 class="comp-brand-name">NÉVRE</h4>
+          <span class="comp-format-tag">STORY FORMAT (VERTICAL 9:16)</span>
+          <ul class="comp-list">
+            <li>Short-form vertical narrative designed for rapid consumption</li>
+            <li>Mobile-first full-screen immersive composition</li>
+            <li>Sequential frames creating anticipation across taps</li>
+            <li>Interaction-focused with prominent CTA touchpoints</li>
+          </ul>
+        </div>
+
+        <!-- SOLRA Column -->
+        <div class="comp-col comp-col-solra">
+          <h4 class="comp-brand-name">SOLRA</h4>
+          <span class="comp-format-tag">CAROUSEL FORMAT (FEED MULTI-SLIDE)</span>
+          <ul class="comp-list">
+            <li>Multi-slide feed architecture built for dwell-time and swipe retention</li>
+            <li>Information-led educational & product storytelling</li>
+            <li>Slide-to-slide continuity with edge-bleeding elements</li>
+            <li>Balanced combination of hook, depth, and concluding conversion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FINAL SECTION — DESIGNING FOR THE FORMAT
+         ========================================================= -->
+    <div class="closing-block">
+      <h3 class="closing-section-title">DESIGNING FOR THE FORMAT</h3>
+      <p class="closing-body-text">Effective social design is never about applying a single uniform template. It demands an acute understanding of how format ergonomics, user intent, platform mechanics, and distinct brand positioning intersect to deliver impactful creative work.</p>
+      <div class="closing-pillars-row">
+        <span class="closing-pill">PLATFORM MECHANICS</span>
+        <span class="closing-pill">+</span>
+        <span class="closing-pill">CONTENT FORMAT</span>
+        <span class="closing-pill">+</span>
+        <span class="closing-pill">AUDIENCE INTENT</span>
+        <span class="closing-pill">+</span>
+        <span class="closing-pill">COMMUNICATION GOAL</span>
+      </div>
+    </div>
+
+    <!-- CLOSING & PORTFOLIO NAVIGATION -->
+    <footer class="ns-footer">
+      <div class="footer-rule"></div>
+      <div class="footer-action-wrap">
+        <a href="index.html#work" class="back-btn-bottom">
+          <span aria-hidden="true">←</span>
+          <span>BACK TO SELECTED WORK</span>
+        </a>
+        <span class="footer-tag">PRANNY · VISUAL DESIGNER · 2026</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/view-scale.js"></script>
+</body>
+</html>

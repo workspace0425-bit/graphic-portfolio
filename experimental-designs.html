@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXPERIMENTAL DESIGNS — 10 Visual Studies · Pranny</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0A0C0B;
+      --card-bg: #0E100F;
+      --text: #FFFFFF;
+      --text-muted: #8E8E93;
+      --accent: #E0E0E0;
+      --border: rgba(255, 255, 255, 0.12);
+      --font-display: "Syne", sans-serif;
+      --font-sans: "Plus Jakarta Sans", sans-serif;
+      --font-mono: "Space Mono", monospace;
+      --font-serif: "Instrument Serif", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Nav */
+    .exp-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px clamp(20px, 5vw, 64px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .nav-specimen {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Main Container */
+    .exp-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vh, 60px) clamp(20px, 5vw, 64px) 120px;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(52px, 7.5vh, 88px);
+    }
+
+    /* Opening Hero */
+    .exp-hero {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(24px, 3.5vh, 36px);
+      width: 100%;
+    }
+
+    .exp-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .exp-kicker {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .exp-tag {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    .exp-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .exp-num {
+      font-family: var(--font-mono);
+      font-size: clamp(14px, 1.6vw, 20px);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .exp-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 7vw, 92px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.92;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .exp-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(13px, 1.4vw, 18px);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.85);
+      text-transform: uppercase;
+    }
+
+    .exp-category {
+      font-family: var(--font-mono);
+      font-size: clamp(10.5px, 1.05vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Purpose Statement Box */
+    .purpose-box {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-left: 3px solid #FFFFFF;
+      border-radius: 6px;
+      padding: clamp(24px, 3vh, 36px) clamp(22px, 3vw, 36px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .purpose-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .purpose-quote {
+      font-size: clamp(16px, 1.45vw, 22px);
+      font-weight: 400;
+      line-height: 1.55;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+
+    /* Studies Stream (10 Sections) */
+    .studies-stream {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(72px, 10vh, 120px);
+      width: 100%;
+    }
+
+    .study-item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .study-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .study-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+
+    .study-num {
+      font-family: var(--font-mono);
+      font-size: clamp(13px, 1.2vw, 15px);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #FFFFFF;
+    }
+
+    .study-title {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.8vw, 24px);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .study-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Artwork Frame */
+    .study-frame {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .study-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Study Editorial Content */
+    .study-meta-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: clamp(16px, 2.5vw, 32px);
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: clamp(20px, 2.5vh, 28px) clamp(20px, 2.5vw, 30px);
+    }
+
+    .study-desc-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .study-desc {
+      font-size: clamp(13.5px, 1.05vw, 15px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .study-takeaway-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      padding-left: clamp(16px, 2vw, 24px);
+    }
+
+    .study-takeaway {
+      font-family: var(--font-mono);
+      font-size: clamp(12px, 0.95vw, 13.5px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: #FFFFFF;
+    }
+
+    .study-takeaway strong {
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    /* Closing Block */
+    .closing-block {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: clamp(36px, 5vh, 60px) clamp(24px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      text-align: left;
+    }
+
+    .closing-statement {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.5vw, 34px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .closing-note {
+      font-size: clamp(14px, 1.1vw, 16px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 780px;
+    }
+
+    /* Footer */
+    .exp-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 12px;
+      width: 100%;
+    }
+
+    .footer-rule {
+      width: 100%;
+      height: 1px;
+      background-color: var(--border);
+    }
+
+    .footer-action-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-btn-bottom {
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #FFFFFF;
+      border-radius: 4px;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-btn-bottom:hover {
+      background-color: transparent;
+      color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .footer-tag {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 860px) {
+      .study-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .study-takeaway-wrap {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 0;
+        padding-top: 16px;
+      }
+
+      .footer-action-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/view-scale.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="exp-nav" aria-label="Case Study Navigation">
+    <a href="index.html#work" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span>BACK TO WORK</span>
+    </a>
+    <span class="nav-specimen">PROJECT 04 // EXPERIMENTAL DESIGNS</span>
+  </nav>
+
+  <main class="exp-container">
+
+    <!-- OPENING HERO -->
+    <header class="exp-hero">
+      <div class="exp-hero-meta">
+        <span class="exp-kicker">[ CASE STUDY 04 ]</span>
+        <span class="exp-tag">CURATED COLLECTION</span>
+      </div>
+
+      <div class="exp-title-group">
+        <span class="exp-num">04</span>
+        <h1 class="exp-title">EXPERIMENTAL DESIGNS</h1>
+        <p class="exp-subheading">A VISUAL STUDY EXPLORING DIFFERENT DESIGN LANGUAGES, COMPOSITIONS AND AESTHETICS</p>
+        <p class="exp-category">Aesthetic Adaptability · 10 Curated Explorations · Typographic Systems</p>
+      </div>
+
+      <!-- Purpose Intro Box -->
+      <div class="purpose-box">
+        <span class="purpose-kicker">CURATORIAL PREMISE</span>
+        <blockquote class="purpose-quote">
+          “This collection explores how visual systems can shift across different contexts, styles and moods — demonstrating adaptability rather than one fixed design language.”
+        </blockquote>
+      </div>
+    </header>
+
+    <!-- 10 CURATED DESIGN STUDIES -->
+    <div class="studies-stream">
+
+      <!-- 01 — MINIMALISM -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">01</span>
+            <h2 class="study-title">MINIMALISM</h2>
+          </div>
+          <span class="study-tag">SPATIAL RESTRAINT // ESSENTIAL FORMS</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-minimalism.jpg" alt="Minimalism Experimental Graphic Study" class="study-img" loading="eager">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">A minimalist graphic and editorial composition focused on simplicity, clarity, intentional spatial tension, and essential visual elements stripped of arbitrary decoration.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Ability to work with restrained visual systems, precise spatial tension, and refined negative space.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 — SWISS DESIGN -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">02</span>
+            <h2 class="study-title">SWISS DESIGN</h2>
+          </div>
+          <span class="study-tag">GRID DISCIPLINE // OBJECTIVE ORDER</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-swiss-design.jpg" alt="Swiss Design Experimental Graphic Study" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">Swiss-inspired graphic design focusing on structured asymmetric composition, clean grotesque typography, rigorous grid thinking, and uncompromising visual hierarchy.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Mastery of structured typographic hierarchies, modular grid architectures, and objective visual clarity.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 — BRUTALISM -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">03</span>
+            <h2 class="study-title">BRUTALISM</h2>
+          </div>
+          <span class="study-tag">RAW CONTRAST // STRUCTURAL DISRUPTION</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-brutalism.jpg" alt="Brutalism Experimental Poster Design" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">Brutalist poster and editorial design using raw, high-contrast typography, structural disruption, unpolished geometry, and an intentionally uncompromising visual language.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Confidence with high-impact, anti-decorative graphic systems that command attention through raw tension.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 — NEO-BRUTALISM -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">04</span>
+            <h2 class="study-title">NEO-BRUTALISM</h2>
+          </div>
+          <span class="study-tag">DIGITAL BLOCKS // HIGH-ENERGY CONTRAST</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-neo-brutalism.jpg" alt="Neo-Brutalism Digital Editorial Study" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">Neo-brutalist digital and editorial design combining bold saturated color blocks, retro interface components, stark black borders, and deliberately energetic information hierarchy.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Ability to synthesize contemporary UI culture and vibrant contrast into compelling, playful visual narratives.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 — Y2K -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">05</span>
+            <h2 class="study-title">Y2K AESTHETICS</h2>
+          </div>
+          <span class="study-tag">CYBER NOSTALGIA // CHROME TYPEFORMS</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-y2k.jpg" alt="Y2K Aesthetic Graphic Study" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">Y2K-inspired poster and graphic design drawing from turn-of-the-millennium digital aesthetics, futuristic cyber typography, chrome-rendered textures, and early-web visual motifs.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Versatility in translating niche subcultural trends and tactile digital materials into relevant creative directions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 — ART DECO -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">06</span>
+            <h2 class="study-title">ART DECO</h2>
+          </div>
+          <span class="study-tag">GEOMETRIC SYMMETRY // ORNAMENTAL LUXURY</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-art-deco.jpg" alt="Art Deco Experimental Poster Design" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">Art Deco-inspired poster design emphasizing precise geometric ornamentation, axial symmetry, elegant display typography, and a refined decorative visual cadence.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Precision in handling intricate vector ornamentation, historical design cues, and luxurious structural balance.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 — EDITORIAL DESIGN -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">07</span>
+            <h2 class="study-title">EDITORIAL DESIGN</h2>
+          </div>
+          <span class="study-tag">ART DIRECTION // NARRATIVE PACING</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-editorial.jpg" alt="Editorial Magazine Design Study" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">Contemporary editorial and magazine layout centered on rigorous art direction, asymmetric image composition, nuanced typographic pairing, and dynamic editorial pacing.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Advanced editorial art direction, sophisticated image-text choreography, and long-form visual storytelling.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 — GLASSMORPHISM -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">08</span>
+            <h2 class="study-title">GLASSMORPHISM</h2>
+          </div>
+          <span class="study-tag">OPTICAL TRANSLUCENCY // LAYERED DEPTH</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-glassmorphism.jpg" alt="Glassmorphism Experimental Digital Study" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">An experimental digital graphic study exploring multi-layered optical translucency, chromatic refraction, frosted glass blurring, and spatial depth perception.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Deep understanding of light physics, complex multi-plane depth illusions, and modern digital surface rendering.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 — FUTURISTIC / SPECULATIVE DESIGN -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">09</span>
+            <h2 class="study-title">FUTURISTIC & SPECULATIVE DESIGN</h2>
+          </div>
+          <span class="study-tag">INTERFACE MODULARITY // TECH WORLDBUILDING</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-futurism.jpg" alt="Futuristic and Speculative Graphic Study" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">Futuristic and speculative graphic design combining technology-driven HUD interface elements, monospaced data matrices, digital typography, and forward-looking aesthetic systems.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Capacity to engineer technical data visualizations, speculative design systems, and forward-looking brand worlds.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 — PSYCHEDELIC DESIGN -->
+      <section class="study-item">
+        <header class="study-header">
+          <div class="study-title-wrap">
+            <span class="study-num">10</span>
+            <h2 class="study-title">PSYCHEDELIC DESIGN</h2>
+          </div>
+          <span class="study-tag">ORGANIC WARPING // EXPRESSIVE CHROMATICS</span>
+        </header>
+
+        <figure class="study-frame">
+          <img src="assets/experimental-designs/experimental-psychedelic.jpg" alt="Psychedelic Experimental Poster Study" class="study-img" loading="lazy">
+        </figure>
+
+        <div class="study-meta-grid">
+          <div class="study-desc-wrap">
+            <span class="meta-label">DESIGN APPROACH</span>
+            <p class="study-desc">Psychedelic experimental poster design leveraging fluid vector distortion, surreal compositional juxtaposition, undulating typography, and altered chromatic perception.</p>
+          </div>
+          <div class="study-takeaway-wrap">
+            <p class="study-takeaway"><strong>Demonstrates:</strong> Ability to break traditional layout conventions with expressive organic illustration and fearless chromatic experimentation.</p>
+          </div>
+        </div>
+      </section>
+
+    </div> <!-- /studies-stream -->
+
+    <!-- CLOSING SUMMARY STATEMENT -->
+    <div class="closing-block">
+      <h3 class="closing-statement">“Different briefs demand different visual languages. This collection is an exploration of how far that language can shift.”</h3>
+      <p class="closing-note">From rigorous Swiss grids and stark minimalism to expressive psychedelia and speculative UI, this archive stands as a testament to stylistic versatility, visual curiosity, and execution precision across diverse creative challenges.</p>
+    </div>
+
+    <!-- CLOSING & PORTFOLIO NAVIGATION -->
+    <footer class="exp-footer">
+      <div class="footer-rule"></div>
+      <div class="footer-action-wrap">
+        <a href="index.html#work" class="back-btn-bottom">
+          <span aria-hidden="true">←</span>
+          <span>BACK TO SELECTED WORK</span>
+        </a>
+        <span class="footer-tag">PRANNY · VISUAL DESIGNER · 2026</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/view-scale.js"></script>
+</body>
+</html>

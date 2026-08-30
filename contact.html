@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT — Pranny · Visual Designer</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0A0C0B;
+      --card-bg: #0E100F;
+      --text: #FFFFFF;
+      --text-muted: #8E8E93;
+      --border: rgba(255, 255, 255, 0.12);
+      --font-display: "Syne", sans-serif;
+      --font-sans: "Plus Jakarta Sans", sans-serif;
+      --font-mono: "Space Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Nav */
+    .contact-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px clamp(20px, 5vw, 64px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+
+    .nav-specimen {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Main Container */
+    .contact-page-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(48px, 8vh, 88px) clamp(20px, 5vw, 64px) 120px;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(52px, 8vh, 84px);
+    }
+
+    .contact-meta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 16px;
+    }
+
+    .contact-kicker-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .contact-num {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.1em;
+    }
+
+    .contact-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 6px 14px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #22C55E;
+      box-shadow: 0 0 10px #22C55E;
+      display: inline-block;
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .status-text {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .contact-hero-composition {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(16px, 2.5vh, 28px);
+    }
+
+    .contact-main-headline {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 7.2vw, 86px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.92;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .headline-row {
+      display: block;
+    }
+
+    .headline-accent {
+      color: #FFFFFF;
+      opacity: 0.9;
+    }
+
+    .contact-statement-lead {
+      font-size: clamp(16px, 1.4vw, 22px);
+      font-weight: 400;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 680px;
+      margin-top: 8px;
+    }
+
+    /* Recruiter CTA Banner */
+    .recruiter-cta-banner {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-left: 3px solid #FFFFFF;
+      border-radius: 6px;
+      padding: clamp(20px, 3vh, 28px) clamp(20px, 3vw, 32px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .cta-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cta-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .cta-heading {
+      font-family: var(--font-display);
+      font-size: clamp(13.5px, 1.25vw, 16.5px);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .cta-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Contact Channels Grid */
+    .contact-channels-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(16px, 2vw, 24px);
+      width: 100%;
+    }
+
+    .contact-channel-card {
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: clamp(22px, 3vh, 32px) clamp(20px, 2.5vw, 30px);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-decoration: none;
+      color: #FFFFFF;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-channel-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #FFFFFF;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .contact-channel-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.3);
+      background-color: #141716;
+    }
+
+    .contact-channel-card:hover::before {
+      opacity: 1;
+    }
+
+    .channel-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
+    }
+
+    .channel-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .channel-tag {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .channel-arrow {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: #FFFFFF;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-channel-card:hover .channel-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    .channel-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .channel-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .channel-val {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.6vw, 22px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+      word-break: break-word;
+    }
+
+    .channel-card-footer {
+      padding-top: 4px;
+    }
+
+    .channel-action {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .contact-channel-card:hover .channel-action {
+      color: #FFFFFF;
+    }
+
+    /* Site Footer */
+    .contact-site-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 16px;
+      width: 100%;
+    }
+
+    .site-footer-rule {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .site-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .footer-brand-name {
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      font-weight: 800;
+    }
+
+    .back-to-top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-to-top-btn:hover {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       THE FINAL REVEAL — EDITORIAL ENTRANCE ANIMATIONS
+       ========================================================= */
+
+    /* Default State: Content is fully visible by default */
+    .contact-page-container .reveal-step-1,
+    .contact-page-container .reveal-step-2,
+    .contact-page-container .reveal-step-2-sub,
+    .contact-page-container .reveal-step-3,
+    .contact-page-container .reveal-step-4,
+    .contact-page-container .reveal-step-5 {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .contact-statement-lead .lead-line {
+      display: block;
+    }
+
+    /* Progressive Enhancement: Initial hidden state ONLY when armed by JS */
+    .contact-page-container.reveal-armed:not(.is-revealed) .reveal-step-1,
+    .contact-page-container.reveal-armed:not(.is-revealed) .reveal-step-2,
+    .contact-page-container.reveal-armed:not(.is-revealed) .reveal-step-2-sub,
+    .contact-page-container.reveal-armed:not(.is-revealed) .reveal-step-3,
+    .contact-page-container.reveal-armed:not(.is-revealed) .reveal-step-4,
+    .contact-page-container.reveal-armed:not(.is-revealed) .reveal-step-5 {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    /* Sequential Staggered Entrance */
+    .contact-page-container.is-revealed .reveal-step-1 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.1s;
+    }
+
+    .contact-page-container.is-revealed .reveal-step-2 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.3s;
+    }
+
+    .contact-page-container.is-revealed .reveal-step-2-sub {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.55s;
+    }
+
+    .contact-page-container.is-revealed .reveal-step-3 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.8s;
+    }
+
+    .contact-page-container.is-revealed .reveal-step-4 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 1.05s;
+    }
+
+    .contact-page-container.is-revealed .reveal-step-5 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 1.3s;
+    }
+
+    /* Reduced Motion Override */
+    @media (prefers-reduced-motion: reduce) {
+      .contact-page-container .reveal-step-1,
+      .contact-page-container .reveal-step-2,
+      .contact-page-container .reveal-step-2-sub,
+      .contact-page-container .reveal-step-3,
+      .contact-page-container .reveal-step-4,
+      .contact-page-container .reveal-step-5 {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="contact-nav" aria-label="Navigation">
+    <a href="index.html" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span>BACK TO HOME</span>
+    </a>
+    <span class="nav-specimen">CONTACT // PRANNY</span>
+  </nav>
+
+  <main class="contact-page-container" id="top">
+
+    <!-- Top Meta Tag / Section Header -->
+    <div class="contact-meta-header reveal-step-1">
+      <div class="contact-kicker-wrap">
+        <span class="contact-num">03</span>
+        <span class="contact-kicker">[ 03 // HAVE A VISION? ]</span>
+      </div>
+      <div class="availability-badge" aria-label="Availability status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">AVAILABLE FOR OPPORTUNITIES</span>
+      </div>
+    </div>
+
+    <!-- Main Headline Hero Composition -->
+    <div class="contact-hero-composition">
+      <h1 class="contact-main-headline reveal-step-2">
+        <span class="headline-row">LET'S MAKE</span>
+        <span class="headline-row">SOMETHING</span>
+        <span class="headline-row headline-accent">GOOD.</span>
+      </h1>
+      <p class="contact-statement-lead">
+        <span class="lead-line reveal-step-2-sub">You bring the vision.</span>
+        <span class="lead-line reveal-step-3">I’ll figure out how to make it happen.</span>
+      </p>
+    </div>
+
+    <!-- Recruiter CTA Info Banner -->
+    <div class="recruiter-cta-banner reveal-step-5">
+      <div class="cta-left">
+        <span class="cta-label">OPEN FOR ROLES</span>
+        <p class="cta-heading">FREELANCE / FULL-TIME OPPORTUNITIES / COLLABORATIONS</p>
+      </div>
+      <div class="cta-right">
+        <span class="cta-sub">READY TO DISCUSS YOUR NEXT PROJECT OR ROLE</span>
+      </div>
+    </div>
+
+    <!-- Direct Contact Channels Grid (Email + WhatsApp) -->
+    <div class="contact-channels-grid reveal-step-4">
+      
+      <!-- EMAIL CARD -->
+      <a href="mailto:pranjal454jadon@gmail.com" class="contact-channel-card" aria-label="Send email to pranjal454jadon@gmail.com">
+        <div class="channel-card-top">
+          <span class="channel-num">01</span>
+          <span class="channel-tag">DIRECT INQUIRIES</span>
+          <span class="channel-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="channel-card-body">
+          <span class="channel-label">EMAIL</span>
+          <span class="channel-val">pranjal454jadon@gmail.com</span>
+        </div>
+        <div class="channel-card-footer">
+          <span class="channel-action">CLICK TO SEND EMAIL →</span>
+        </div>
+      </a>
+
+      <!-- WHATSAPP CARD -->
+      <a href="https://wa.me/919315446326" target="_blank" rel="noopener noreferrer" class="contact-channel-card" aria-label="Message on WhatsApp: 9315446326">
+        <div class="channel-card-top">
+          <span class="channel-num">02</span>
+          <span class="channel-tag">QUICK MESSAGE</span>
+          <span class="channel-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="channel-card-body">
+          <span class="channel-label">WHATSAPP / PHONE</span>
+          <span class="channel-val">9315446326</span>
+        </div>
+        <div class="channel-card-footer">
+          <span class="channel-action">CHAT ON WHATSAPP →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Final Editorial Sign-Off & Back to Top -->
+    <footer class="contact-site-footer reveal-step-5">
+      <div class="site-footer-rule"></div>
+      <div class="site-footer-row">
+        <div class="footer-brand-wrap">
+          <span class="footer-brand-name">PRANNY</span>
+          <span class="footer-brand-dash">—</span>
+          <span class="footer-brand-role">VISUAL DESIGNER · 2026</span>
+        </div>
+        <a href="#top" class="back-to-top-btn" aria-label="Back to top of page">
+          <span>BACK TO TOP</span>
+          <span class="top-arrow" aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const container = document.getElementById('top');
+        if (container) container.classList.add('is-revealed');
+      }, 100);
+    });
+  </script>
+</body>
+</html>
