@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUMA — Brand Identity & Apparel Design Case Study · Pranny</title>
+  <title>LUMA — Women's Activewear (Concept Project) · Brand Identity & Design System · Pranny</title>
   
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -212,6 +212,76 @@
       padding: 5px 12px;
       border-radius: 4px;
       text-transform: uppercase;
+    }
+
+    /* Strategic Brief & Decisions Specimen Grid */
+    .luma-brief-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(16px, 2vw, 24px);
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .brief-card {
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: clamp(22px, 2.8vh, 30px) clamp(20px, 2.4vw, 28px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .brief-card-num {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--terracotta);
+      text-transform: uppercase;
+    }
+
+    .brief-card-title {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.5vw, 20px);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    .brief-card-text {
+      font-family: var(--font-sans);
+      font-size: clamp(13px, 1.05vw, 14.5px);
+      font-weight: 400;
+      line-height: 1.62;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .direction-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .d-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #FFFFFF;
+      background: rgba(212, 91, 75, 0.18);
+      border: 1px solid rgba(212, 91, 75, 0.35);
+      border-radius: 4px;
+      padding: 4px 10px;
+    }
+
+    @media (max-width: 768px) {
+      .luma-brief-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Frames & Images */
@@ -467,25 +537,26 @@
     <!-- HERO SECTION -->
     <header class="luma-hero">
       <div class="luma-hero-meta">
-        <span class="luma-kicker">[ CASE STUDY 01 ]</span>
-        <span class="luma-tag">BRAND IDENTITY & APPAREL</span>
+        <span class="luma-kicker">[ CASE STUDY 01 // CONCEPT PROJECT ]</span>
+        <span class="luma-tag">CONCEPT BRAND IDENTITY & APPAREL SYSTEM</span>
       </div>
 
       <div class="luma-title-group">
         <span class="luma-num">01</span>
         <h1 class="luma-title">LUMA</h1>
-        <p class="luma-subheading">BRAND IDENTITY + APPAREL DESIGN</p>
-        <p class="luma-category">Women's Activewear · Brand Identity & Design System</p>
+        <p class="luma-subheading">CONCEPT BRAND IDENTITY + APPAREL DESIGN</p>
+        <p class="luma-category">Self-Initiated Concept Project · Women's Activewear · Brand Identity & Design System</p>
       </div>
 
       <!-- Hero Description & Info Row -->
       <div class="brief-intro-box">
-        <p class="brief-lead">“A fitnesswear brand designed around confidence, movement and expressive everyday style.”</p>
+        <p class="brief-lead">“A self-initiated fitnesswear concept built around confidence, movement, and expressive everyday style. Developed to explore how vibrant brand identity, structured packaging, and multi-channel storytelling can break category predictability in women's athletic apparel.”</p>
         <div class="pill-row">
+          <span class="info-pill">CONCEPT PROJECT</span>
           <span class="info-pill">BRAND IDENTITY</span>
-          <span class="info-pill">APPAREL</span>
-          <span class="info-pill">PACKAGING</span>
-          <span class="info-pill">ART DIRECTION</span>
+          <span class="info-pill">APPAREL DESIGN</span>
+          <span class="info-pill">PACKAGING DIELINES</span>
+          <span class="info-pill">CAMPAIGN ART DIRECTION</span>
         </div>
       </div>
 
@@ -493,6 +564,49 @@
       <figure class="luma-frame">
         <img src="assets/luma-01.png" alt="LUMA Brand Identity and Apparel Hero Visual" class="luma-img" loading="eager">
       </figure>
+
+      <!-- STRATEGIC BRIEF & DESIGN RATIONALE GRID -->
+      <div class="luma-brief-grid" aria-label="Project Brief, Rationale, and Strategic Objectives">
+        <div class="brief-card">
+          <span class="brief-card-num">01 // THE IDEA</span>
+          <h3 class="brief-card-title">FEEL GOOD, MOVE FREE</h3>
+          <p class="brief-card-text">LUMA was conceived as a women's performance wear concept around the belief that feeling energized in what you wear directly impacts how you move and show up.</p>
+        </div>
+
+        <div class="brief-card">
+          <span class="brief-card-num">02 // THE CHALLENGE</span>
+          <h3 class="brief-card-title">BREAKING PREDICTABILITY</h3>
+          <p class="brief-card-text">Women's athletic wear is heavily crowded with minimal, muted, monochrome identities. The challenge was designing a system that feels expressive and feminine without sacrificing technical authority.</p>
+        </div>
+
+        <div class="brief-card">
+          <span class="brief-card-num">03 // THE OBJECTIVE</span>
+          <h3 class="brief-card-title">DISTINCTIVE BRAND SYSTEM</h3>
+          <p class="brief-card-text">Build a complete, scalable brand architecture—balancing technical performance, comfort, and bold self-expression through color, silhouette, and playful graphic accents.</p>
+        </div>
+
+        <div class="brief-card brief-card-direction">
+          <span class="brief-card-num">04 // CREATIVE DIRECTION</span>
+          <div class="direction-tags">
+            <span class="d-tag">BRIGHT</span>
+            <span class="d-tag">ENERGETIC</span>
+            <span class="d-tag">CONFIDENT</span>
+            <span class="d-tag">PLAYFUL</span>
+          </div>
+        </div>
+
+        <div class="brief-card">
+          <span class="brief-card-num">05 // INTENDED AUDIENCE</span>
+          <h3 class="brief-card-title">EMPOWERED & ACTIVE</h3>
+          <p class="brief-card-text">Geared toward active women who value intentional lifestyle design. They look for activewear that transitions smoothly from high-intensity training to casual city living, rejecting sterile gym aesthetics.</p>
+        </div>
+
+        <div class="brief-card">
+          <span class="brief-card-num">06 // DESIGN RATIONALE</span>
+          <h3 class="brief-card-title">STRATEGIC DECISIONS</h3>
+          <p class="brief-card-text">Warm terracotta and energizing coral hues were chosen to evoke warmth and empowerment. Clean modern typography ensures legibility on garments and packaging, while energetic layout rhythms fuel social engagement.</p>
+        </div>
+      </div>
     </header>
 
     <!-- 01 — THE BRAND -->
@@ -673,7 +787,7 @@
           <span aria-hidden="true">←</span>
           <span>BACK TO SELECTED WORK</span>
         </a>
-        <span class="footer-tag">PRANNY · VISUAL DESIGNER · 2026</span>
+        <span class="footer-tag">PRANNY · BRAND & CREATIVE PROJECTS · 2026</span>
       </div>
     </footer>
 

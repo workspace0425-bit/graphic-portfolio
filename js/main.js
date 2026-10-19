@@ -1,5 +1,5 @@
 /**
- * PRANNY — VISUAL DESIGNER
+ * PRANNY — BRAND & CREATIVE PROJECTS
  * Cinematic Letter-Fall Intro, Hidden Graphic Canvas, Zig-Zag Break,
  * Checkerboard Curtain Transition & PRANNY Smoke/Ink Dissolve Effect
  */
